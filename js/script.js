@@ -79,34 +79,22 @@ function scrollToService(n, e) {
 function setError(id, message) {
   const input = document.getElementById(id);
   if (!input) return;
-  
-  let errorDiv = document.getElementById('err-' + id.split('-')[1]);
-  if (!errorDiv) {
-    // Dynamically create error message div if it doesn't exist in HTML
-    errorDiv = document.createElement('div');
-    errorDiv.id = 'err-' + id.split('-')[1];
-    errorDiv.className = 'error-msg';
-    input.parentNode.appendChild(errorDiv);
-  }
-  
   input.classList.remove('success');
   input.classList.add('error');
-  errorDiv.innerText = message;
-  errorDiv.classList.add('show');
 }
 
 function setSuccess(id) {
   const input = document.getElementById(id);
   if (!input) return;
-  
-  const errorDiv = document.getElementById('err-' + id.split('-')[1]);
   input.classList.remove('error');
   input.classList.add('success');
-  
-  if (errorDiv) {
-    errorDiv.innerText = '';
-    errorDiv.classList.remove('show');
-  }
+}
+
+function shakeElement(el) {
+  el.classList.remove('shake');
+  // Trigger reflow to restart animation
+  void el.offsetWidth;
+  el.classList.add('shake');
 }
 
 function validateField(id) {
@@ -117,11 +105,6 @@ function validateField(id) {
   if (!val) {
     // Clear any previous error/success state if field is empty
     input.classList.remove('error', 'success');
-    const errorDiv = document.getElementById('err-' + id.split('-')[1]);
-    if (errorDiv) {
-      errorDiv.innerText = '';
-      errorDiv.classList.remove('show');
-    }
     return true; // Let browser handle 'required' validation
   }
 
@@ -186,6 +169,9 @@ if (contactForm) {
   fields.forEach(id => {
     const el = document.getElementById(id);
     if (el) {
+      el.addEventListener('invalid', function() {
+        shakeElement(this);
+      });
       el.addEventListener('blur', () => validateField(id));
       el.addEventListener('input', () => {
         if (el.classList.contains('error')) {
@@ -212,6 +198,11 @@ if (contactForm) {
     });
 
     if (!isValid) {
+      // Shake all custom errors
+      this.querySelectorAll('.error').forEach(el => {
+        shakeElement(el);
+      });
+
       // Find first error and focus
       const firstError = document.querySelector('.form-group .error');
       if (firstError) {

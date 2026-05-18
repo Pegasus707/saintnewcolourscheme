@@ -1869,6 +1869,30 @@ body::before {
   border-color: var(--gold);
 }
 
+/* Validation Feedback Styles */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #b83c3c !important;
+}
+
+.form-group input.success,
+.form-group select.success,
+.form-group textarea.success {
+  border-color: var(--gold) !important;
+}
+
+/* Shake Animation for Invalid Fields */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
