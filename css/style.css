@@ -1824,6 +1824,15 @@ body::before {
   appearance: none;
 }
 
+/* Autofill styling overrides */
+.form-group input:-webkit-autofill,
+.form-group textarea:-webkit-autofill,
+.form-group select:-webkit-autofill {
+  -webkit-text-fill-color: var(--white) !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(34, 45, 41, 0.04) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .form-group select {
   cursor: pointer;
 }
