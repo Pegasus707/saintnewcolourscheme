@@ -48,6 +48,15 @@ svg {
   height: auto;
   display: block;
 }
+/* Prevent text highlighting on interactive buttons/controls */
+.nav-cta,
+.form-submit,
+.btn-primary,
+.btn-secondary,
+.hamburger {
+  user-select: none;
+  -webkit-user-select: none;
+}
 
 /* ─── PAGES ─── */
 .page {
