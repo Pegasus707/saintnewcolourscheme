@@ -1903,6 +1903,7 @@ body::before {
 .form-group select.error,
 .form-group textarea.error {
   border-color: #b83c3c !important;
+  box-shadow: 0 0 0 2px rgba(184, 60, 60, 0.2) !important;
 }
 
 .form-group input.success,
