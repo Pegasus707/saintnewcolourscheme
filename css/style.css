@@ -24,6 +24,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
   /* Prevent text size adjustment on orientation change in mobile browsers */
   -webkit-text-size-adjust: 100%;
 }
@@ -350,20 +351,20 @@ section {
 
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
 
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -1168,7 +1169,7 @@ body::before {
 
 .about-story-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(3rem, 8vw, 6rem);
   align-items: start;
 }
@@ -1402,7 +1403,7 @@ body::before {
 
 .service-item {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(3rem, 8vw, 5rem);
   align-items: start;
   max-width: 1280px;
@@ -1683,7 +1684,7 @@ body::before {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(3rem, 8vw, 6rem);
   max-width: 1280px;
   margin: 0 auto;
@@ -1901,7 +1902,7 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
   gap: 3rem;
   margin-bottom: 4rem;
   max-width: 1280px;
