@@ -2093,6 +2093,11 @@ footer {
   .hero-content {
     padding-top: 0;
   }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
