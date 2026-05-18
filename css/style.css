@@ -48,6 +48,18 @@ svg {
   height: auto;
   display: block;
 }
+/* Improve interaction on clickable elements (removes mobile 300ms tap delay) */
+a,
+button,
+.nav-cta,
+.form-submit,
+.btn-primary,
+.btn-secondary,
+.hamburger,
+.product-category {
+  touch-action: manipulation;
+}
+
 /* Prevent text highlighting on interactive buttons/controls */
 .nav-cta,
 .form-submit,
