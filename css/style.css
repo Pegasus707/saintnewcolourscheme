@@ -2023,7 +2023,10 @@ footer {
     margin-top: 2rem;
   }
 
-  .hero {
+  .hero,
+  .about-hero,
+  .services-hero,
+  .products-hero {
     padding-top: 7rem;
     padding-bottom: 4rem;
     min-height: auto;
@@ -2123,7 +2126,10 @@ footer {
     padding-top: 0;
   }
 
-  .hero {
+  .hero,
+  .about-hero,
+  .services-hero,
+  .products-hero {
     padding-top: 6.5rem;
     padding-bottom: 3rem;
   }
