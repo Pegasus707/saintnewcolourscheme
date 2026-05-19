@@ -2112,7 +2112,8 @@ footer {
 /* Safeguard absolute elements under atmospheric-gradient */
 .atmospheric-gradient > .hero-grid-lines,
 .atmospheric-gradient > .hero-logo-accent,
-.atmospheric-gradient > .hero-badge {
+.atmospheric-gradient > .hero-badge,
+.atmospheric-gradient > .about-hero-grid {
   position: absolute !important;
 }
 
@@ -2146,10 +2147,11 @@ footer {
   color: #698F87 !important;
 }
 
-.atmospheric-gradient > .hero-grid-lines {
+.atmospheric-gradient > .hero-grid-lines,
+.atmospheric-gradient > .about-hero-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px) !important;
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
 }
 
 .atmospheric-gradient h1,
@@ -2171,6 +2173,25 @@ footer {
 .atmospheric-gradient .label::before {
   background: #698F87 !important;
 }
+
+.atmospheric-gradient .why-closing {
+  color: #C5A059 !important;
+  border-left-color: #C5A059 !important;
+}
+
+.atmospheric-gradient .why-features {
+  border-left-color: rgba(255, 255, 255, 0.1) !important;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.atmospheric-gradient .partner-type {
+  color: #698F87 !important;
+}
+
+.atmospheric-gradient .partner-type::before {
+  background: #698F87 !important;
+}
+
 
 .atmospheric-gradient p,
 .atmospheric-gradient li {
@@ -2347,7 +2368,8 @@ footer {
 /* Safeguard absolute elements under light-atmospheric-gradient */
 .light-atmospheric-gradient > .hero-grid-lines,
 .light-atmospheric-gradient > .hero-logo-accent,
-.light-atmospheric-gradient > .hero-badge {
+.light-atmospheric-gradient > .hero-badge,
+.light-atmospheric-gradient > .about-hero-grid {
   position: absolute !important;
 }
 
