@@ -2093,35 +2093,15 @@ footer {
 /* ─── PREMIUM ATMOSPHERIC GRADIENT (SECTION LEVEL) ─── */
 .atmospheric-gradient {
   position: relative;
-  background-color: #222D29 !important; /* Base dark color */
+  background: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 85% 15%, rgba(105, 143, 135, 0.28) 0%, transparent 60%),
+    radial-gradient(circle at 15% 85%, rgba(52, 94, 107, 0.32) 0%, transparent 70%),
+    radial-gradient(circle at 50% 30%, rgba(197, 160, 89, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(62, 95, 88, 0.15) 0%, transparent 60%),
+    linear-gradient(135deg, #1C2622 0%, #151C1A 50%, #111614 100%) !important;
   color: #FFFFFF !important;
   overflow: hidden;
-}
-
-.atmospheric-gradient::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  /* Soft layered radial gradients with metallic teal transitions and dark vignette */
-  background: 
-    radial-gradient(ellipse at 80% 10%, rgba(105, 143, 135, 0.15) 0%, transparent 60%),
-    radial-gradient(circle at 15% 85%, rgba(52, 94, 107, 0.2) 0%, transparent 70%),
-    radial-gradient(circle at 50% 50%, transparent 40%, rgba(34, 45, 41, 0.85) 120%),
-    linear-gradient(135deg, #222D29 0%, #1a221f 50%, #222D29 100%);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.atmospheric-gradient::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  /* Faint grain/noise texture for cinematic feel */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
-  z-index: 1;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  opacity: 0.45;
 }
 
 .atmospheric-gradient > * {
@@ -2156,25 +2136,23 @@ footer {
 
 /* Elegant Glassmorphism / Metallic Sub-elements */
 .atmospheric-gradient .pillar-card,
-.atmospheric-gradient .process-step .step-num,
 .atmospheric-gradient .partner-card,
-.atmospheric-gradient .product-card,
-.atmospheric-gradient .why-feature {
-  background: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: all 0.4s ease;
+.atmospheric-gradient .product-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .atmospheric-gradient .pillar-card:hover,
 .atmospheric-gradient .partner-card:hover,
 .atmospheric-gradient .product-card:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border-color: rgba(105, 143, 135, 0.3) !important;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(105, 143, 135, 0.45) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 20px rgba(105, 143, 135, 0.25);
+  transform: translateY(-5px);
 }
 
 /* Positioning Box styling inside atmospheric-gradient */
@@ -2294,38 +2272,26 @@ footer {
 
 
 /* ─── PREMIUM LIGHT ATMOSPHERIC GRADIENT ─── */
-.light-atmospheric-gradient {
+.light-atmospheric-gradient,
+.service-block.light-atmospheric-gradient,
+.service-block:nth-child(even).light-atmospheric-gradient,
+.why.light-atmospheric-gradient,
+.source-section.light-atmospheric-gradient,
+.bridge.light-atmospheric-gradient,
+.partners.light-atmospheric-gradient,
+.vision-section.light-atmospheric-gradient,
+.products-grid.light-atmospheric-gradient {
   position: relative;
-  background-color: #F7FAF9 !important; /* Premium light base */
+  background: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 85% 15%, rgba(105, 143, 135, 0.28) 0%, transparent 60%),
+    radial-gradient(circle at 15% 85%, rgba(52, 94, 107, 0.22) 0%, transparent 70%),
+    radial-gradient(circle at 50% 40%, rgba(197, 160, 89, 0.15) 0%, transparent 55%),
+    linear-gradient(135deg, #FFFFFF 0%, #F5F9F8 40%, #E4ECEB 100%) !important;
   color: #222D29 !important;
   overflow: hidden;
   border-top: 1px solid rgba(62, 95, 88, 0.08);
   border-bottom: 1px solid rgba(62, 95, 88, 0.08);
-}
-
-.light-atmospheric-gradient::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  /* Soft layered radial light gradients with silver-white highlights */
-  background: 
-    radial-gradient(ellipse at 80% 10%, rgba(105, 143, 135, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 15% 85%, rgba(52, 94, 107, 0.06) 0%, transparent 60%),
-    linear-gradient(135deg, #FFFFFF 0%, #F5F8F7 50%, #EAEFEF 100%);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.light-atmospheric-gradient::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  /* Faint grain/noise texture for cinematic feel */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
-  z-index: 1;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  opacity: 0.35;
 }
 
 .light-atmospheric-gradient > * {
@@ -2368,6 +2334,33 @@ footer {
   border-color: #3E5F58 !important;
   color: #3E5F58 !important;
 }
+
+/* Glassmorphism for sub-elements in light-atmospheric-gradient */
+.light-atmospheric-gradient .pillar-card,
+.light-atmospheric-gradient .partner-card,
+.light-atmospheric-gradient .product-card,
+.light-atmospheric-gradient .source-card {
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(62, 95, 88, 0.12) !important;
+  box-shadow: 0 8px 32px rgba(62, 95, 88, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.light-atmospheric-gradient .pillar-card:hover,
+.light-atmospheric-gradient .partner-card:hover,
+.light-atmospheric-gradient .product-card:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(62, 95, 88, 0.35) !important;
+  box-shadow: 0 20px 48px rgba(62, 95, 88, 0.08), 0 0 16px rgba(105, 143, 135, 0.15);
+  transform: translateY(-5px);
+}
+.service-block.light-atmospheric-gradient {
+  border: none !important;
+}
+
+
 
 
 
