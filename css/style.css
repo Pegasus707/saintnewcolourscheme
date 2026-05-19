@@ -2198,6 +2198,10 @@ footer {
   background: rgba(255, 255, 255, 0.03) !important;
 }
 
+.atmospheric-gradient.services-hero::after {
+  display: none !important;
+}
+
 
 .atmospheric-gradient p,
 .atmospheric-gradient li {
