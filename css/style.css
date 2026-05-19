@@ -796,9 +796,9 @@ body::before {
   font-size: 1.35rem;
   font-weight: 500;
   font-style: italic;
-  color: var(--gold);
+  color: #C5A059 !important;
   line-height: 1.6;
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid #C5A059 !important;
   padding-left: 1.5rem;
   margin-top: 2rem;
 }
@@ -1284,8 +1284,8 @@ body::before {
   font-size: 1.25rem;
   font-weight: 300;
   font-style: italic;
-  color: var(--gold);
-  border-left: 2px solid var(--gold);
+  color: #C5A059 !important;
+  border-left: 2px solid #C5A059 !important;
   padding: 1.5rem 2rem;
   background: rgba(62, 95, 88, 0.04);
   margin: 3rem 0;
@@ -2192,6 +2192,12 @@ footer {
   background: #698F87 !important;
 }
 
+.atmospheric-gradient .vision-section blockquote {
+  color: #C5A059 !important;
+  border-left-color: #C5A059 !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
 
 .atmospheric-gradient p,
 .atmospheric-gradient li {
@@ -2201,7 +2207,8 @@ footer {
 /* Elegant Glassmorphism / Metallic Sub-elements */
 .atmospheric-gradient .pillar-card,
 .atmospheric-gradient .partner-card,
-.atmospheric-gradient .product-card {
+.atmospheric-gradient .product-card,
+.atmospheric-gradient .source-card {
   background: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -2212,7 +2219,8 @@ footer {
 
 .atmospheric-gradient .pillar-card:hover,
 .atmospheric-gradient .partner-card:hover,
-.atmospheric-gradient .product-card:hover {
+.atmospheric-gradient .product-card:hover,
+.atmospheric-gradient .source-card:hover {
   background: rgba(255, 255, 255, 0.06) !important;
   border-color: rgba(105, 143, 135, 0.45) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 20px rgba(105, 143, 135, 0.25);
@@ -2424,7 +2432,8 @@ footer {
 
 .light-atmospheric-gradient .pillar-card:hover,
 .light-atmospheric-gradient .partner-card:hover,
-.light-atmospheric-gradient .product-card:hover {
+.light-atmospheric-gradient .product-card:hover,
+.light-atmospheric-gradient .source-card:hover {
   background: rgba(255, 255, 255, 0.85) !important;
   border-color: rgba(62, 95, 88, 0.35) !important;
   box-shadow: 0 20px 48px rgba(62, 95, 88, 0.08), 0 0 16px rgba(105, 143, 135, 0.15);
