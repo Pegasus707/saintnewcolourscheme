@@ -2157,12 +2157,14 @@ footer {
 
 /* Positioning Box styling inside atmospheric-gradient */
 .atmospheric-gradient .positioning {
-  border-left: 2px solid #698F87 !important;
-  background: rgba(105, 143, 135, 0.06) !important;
+  border-left: 2px solid #C5A059 !important;
+  background: rgba(197, 160, 89, 0.05) !important;
 }
 
 .atmospheric-gradient .positioning p {
-  color: #698F87 !important;
+  color: #E5C483 !important;
+  font-size: 1.4rem !important;
+  letter-spacing: 0.02em !important;
 }
 
 .atmospheric-gradient .pillar-num {
