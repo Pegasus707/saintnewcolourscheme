@@ -2109,6 +2109,49 @@ footer {
   z-index: 2;
 }
 
+/* Safeguard absolute elements under atmospheric-gradient */
+.atmospheric-gradient > .hero-grid-lines,
+.atmospheric-gradient > .hero-logo-accent,
+.atmospheric-gradient > .hero-badge {
+  position: absolute !important;
+}
+
+/* Watermark logo color adjustment for dark theme */
+.atmospheric-gradient > .hero-logo-accent {
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.025 !important;
+}
+
+/* Hero elements contrast overrides */
+.atmospheric-gradient .hero-eyebrow {
+  color: #698F87 !important;
+}
+.atmospheric-gradient .hero-eyebrow::before {
+  background: #698F87 !important;
+}
+
+.atmospheric-gradient h1 em,
+.atmospheric-gradient h2 em,
+.atmospheric-gradient h3 em {
+  color: #C5A059 !important;
+}
+
+.atmospheric-gradient > .hero-badge {
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+}
+.atmospheric-gradient > .hero-badge .hero-badge-num {
+  color: #FFFFFF !important;
+}
+.atmospheric-gradient > .hero-badge .hero-badge-text {
+  color: #698F87 !important;
+}
+
+.atmospheric-gradient > .hero-grid-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px) !important;
+}
+
 .atmospheric-gradient h1,
 .atmospheric-gradient h2,
 .atmospheric-gradient h3,
@@ -2299,6 +2342,13 @@ footer {
 .light-atmospheric-gradient > * {
   position: relative;
   z-index: 2;
+}
+
+/* Safeguard absolute elements under light-atmospheric-gradient */
+.light-atmospheric-gradient > .hero-grid-lines,
+.light-atmospheric-gradient > .hero-logo-accent,
+.light-atmospheric-gradient > .hero-badge {
+  position: absolute !important;
 }
 
 .light-atmospheric-gradient h1,
