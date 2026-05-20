@@ -102,10 +102,10 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: clamp(64px, 8vh, 72px);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(18, 26, 23, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s;
 }
 
@@ -134,6 +134,8 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  /* Forces emblem to be white for visibility on dark green bg */
 }
 
 .nav-logo-text {
@@ -146,8 +148,8 @@ nav {
   height: 100%;
   width: auto;
   object-fit: contain;
-  filter: brightness(0);
-  /* Forces the logo text to be black for visibility on light bg */
+  filter: brightness(0) invert(1);
+  /* Forces the logo text to be white for visibility on dark green bg */
 }
 
 
@@ -163,7 +165,7 @@ nav {
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(34, 45, 41, 0.65);
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s;
@@ -178,13 +180,13 @@ nav {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--gold);
+  background: var(--gold-light);
   transition: width 0.3s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--white);
+  color: #FFFFFF;
 }
 
 .nav-links a:hover::after,
@@ -200,16 +202,23 @@ nav {
   text-transform: uppercase;
   color: #FFFFFF;
   background: var(--gold);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 10px 22px;
   cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.3s, transform 0.2s;
+  border-radius: 30px; /* Modern premium pill shape */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-cta:hover {
   background: var(--gold-light);
-  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(105, 143, 135, 0.35);
+}
+
+.nav-cta:active {
+  transform: translateY(-0.5px) scale(0.97);
 }
 
 /* mobile nav */
@@ -231,7 +240,7 @@ nav {
   display: block;
   width: 24px;
   height: 1.5px;
-  background: var(--white);
+  background: #FFFFFF;
   transition: all 0.3s;
 }
 
@@ -242,7 +251,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--black);
+  background: #0E1412;
   z-index: 999;
   flex-direction: column;
   align-items: center;
@@ -267,14 +276,14 @@ nav {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--white);
+  color: #FFFFFF;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .mobile-menu a:hover {
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 /* ─── TYPOGRAPHY HELPERS ─── */
@@ -474,13 +483,7 @@ body::before {
 }
 
 .hero-grid-lines {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(62, 95, 88, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(62, 95, 88, 0.07) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 80%);
+  display: none !important;
 }
 
 .hero-content {
@@ -1181,12 +1184,7 @@ body::before {
 }
 
 .about-hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(62, 95, 88, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(62, 95, 88, 0.06) 1px, transparent 1px);
-  background-size: 60px 60px;
+  display: none !important;
 }
 
 .about-hero-content {
@@ -1538,13 +1536,7 @@ body::before {
 }
 
 .service-visual::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(62, 95, 88, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(62, 95, 88, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
+  display: none !important;
 }
 
 .service-visual img {
@@ -2020,7 +2012,7 @@ footer {
 }
 
 .footer-logo .nav-logo-mark img {
-  filter: brightness(100%);
+  filter: brightness(0) !important;
 }
 
 .footer-logo .nav-logo-text img {
@@ -2109,107 +2101,89 @@ footer {
 .hero.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     radial-gradient(circle at 50% 90%, rgba(105, 143, 135, 0.38) 0%, transparent 55%),
     radial-gradient(circle at 10% 20%, rgba(197, 160, 89, 0.15) 0%, transparent 45%),
     linear-gradient(180deg, #090C0B 0%, #0F1513 50%, #151F1C 100%) !important;
-  background-size: auto, 100px 100px, 100px 100px, auto, auto, auto !important;
+  background-size: auto !important;
 }
 
 /* 2. Why Section - Diagonal Blend (Top-Right to Bottom-Left) */
 .why.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     radial-gradient(circle at 90% 15%, rgba(105, 143, 135, 0.35) 0%, transparent 65%),
     radial-gradient(circle at 15% 85%, rgba(197, 160, 89, 0.1) 0%, transparent 50%),
     linear-gradient(135deg, #070A09 0%, #111A17 60%, #1C2B25 100%) !important;
-  background-size: auto, 80px 80px, 80px 80px, auto, auto, auto !important;
+  background-size: auto !important;
 }
 
 /* 3. Process Section - Split Top/Bottom Edge-Lit */
 .process.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     radial-gradient(circle at 50% 5%, rgba(105, 143, 135, 0.3) 0%, transparent 45%),
     radial-gradient(circle at 50% 95%, rgba(52, 94, 107, 0.28) 0%, transparent 50%),
     linear-gradient(180deg, #0E1412 0%, #060908 50%, #0E1412 100%) !important;
-  background-size: auto, 90px 90px, 90px 90px, auto, auto, auto !important;
+  background-size: auto !important;
 }
 
 /* 4. Partners Section - Corner Fades & Bottom-Left Focus */
 .partners.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     radial-gradient(circle at 10% 80%, rgba(62, 95, 88, 0.35) 0%, transparent 60%),
     radial-gradient(circle at 85% 20%, rgba(52, 94, 107, 0.2) 0%, transparent 50%),
     linear-gradient(135deg, #090C0B 0%, #121A18 100%) !important;
-  background-size: auto, 120px 120px, 120px 120px, auto, auto, auto !important;
+  background-size: auto !important;
 }
 
 /* 5. Vision Section - Epic Center Glow Bloom */
 .vision-section.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     radial-gradient(circle at 50% 50%, rgba(105, 143, 135, 0.4) 0%, transparent 60%),
     radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.15) 0%, transparent 40%),
     linear-gradient(135deg, #060908 0%, #0F1413 50%, #060908 100%) !important;
-  background-size: auto, 70px 70px, 70px 70px, auto, auto, auto !important;
+  background-size: auto !important;
 }
 
 /* 6. Services Hero Section - Upper Horizon Glow */
 .services-hero.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     radial-gradient(ellipse at 50% 15%, rgba(105, 143, 135, 0.42) 0%, transparent 70%),
     linear-gradient(180deg, #090B0A 0%, #151D1B 65%, #0B0E0D 100%) !important;
-  background-size: auto, 100px 100px, 100px 100px, auto, auto !important;
+  background-size: auto !important;
 }
 
 /* 7. Products Hero Section - Spotlight Left Leak */
 .products-hero.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     radial-gradient(circle at 10% 10%, rgba(105, 143, 135, 0.4) 0%, transparent 60%),
     radial-gradient(circle at 85% 85%, rgba(52, 94, 107, 0.25) 0%, transparent 55%),
     linear-gradient(135deg, #090B0A 0%, #131A18 100%) !important;
-  background-size: auto, 80px 80px, 80px 80px, auto, auto, auto !important;
+  background-size: auto !important;
 }
 
 /* 8. CTA Bands - Diagonal Dynamic Light Beam */
 .cta-band.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     radial-gradient(circle at 80% 50%, rgba(105, 143, 135, 0.38) 0%, transparent 55%),
     radial-gradient(circle at 20% 50%, rgba(197, 160, 89, 0.16) 0%, transparent 50%),
     linear-gradient(135deg, #090D0C 0%, #1C2924 100%) !important;
-  background-size: auto, 100px 100px, 100px 100px, auto, auto, auto !important;
+  background-size: auto !important;
 }
 
 /* 9. Contact Page - Split Multi-Glow Panel */
 .contact-page.atmospheric-gradient {
   background: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     radial-gradient(circle at 15% 30%, rgba(197, 160, 89, 0.18) 0%, transparent 50%),
     radial-gradient(circle at 85% 70%, rgba(105, 143, 135, 0.35) 0%, transparent 55%),
     linear-gradient(135deg, #090C0B 0%, #121A17 100%) !important;
-  background-size: auto, 80px 80px, 80px 80px, auto, auto, auto !important;
+  background-size: auto !important;
 }
 
 .atmospheric-gradient > * {
@@ -2255,12 +2229,6 @@ footer {
   color: #698F87 !important;
 }
 
-.atmospheric-gradient > .hero-grid-lines,
-.atmospheric-gradient > .about-hero-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
-}
 
 .atmospheric-gradient h1,
 .atmospheric-gradient h2,
@@ -2745,7 +2713,7 @@ footer {
   }
 
   .founder-frame {
-    max-width: 100%;
+    max-width: 250px;
   }
 
   .footer-bottom {
