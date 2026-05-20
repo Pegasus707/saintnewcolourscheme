@@ -4,6 +4,16 @@
 function showPage(page, e) {
   if (e) e.preventDefault();
   
+  // Reset contact form visibility state if previously submitted successfully
+  if (page === 'contact') {
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    if (form && success && form.style.display === 'none') {
+      form.style.display = 'block';
+      success.style.display = 'none';
+    }
+  }
+  
   // Update active page visibility
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const targetPage = document.getElementById('page-' + page);
@@ -25,8 +35,17 @@ function showPage(page, e) {
  */
 function toggleMobile() {
   const menu = document.getElementById('mobileMenu');
+  const hamburger = document.getElementById('hamburger');
   if (menu) {
-    menu.classList.toggle('open');
+    const isOpen = menu.classList.toggle('open');
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+  if (hamburger) {
+    hamburger.classList.toggle('open');
   }
 }
 
@@ -45,10 +64,7 @@ function toggleCategory(el) {
 function scrollToService(n, e) {
   if (e) e.preventDefault();
   const target = document.getElementById('service-' + n);
-  if (!target) {
-    console.warn('Service ' + n + ' not found');
-    return;
-  }
+  if (!target) return;
   
   const servicesPage = document.getElementById('page-services');
   
@@ -81,6 +97,16 @@ function setError(id, message) {
   if (!input) return;
   input.classList.remove('success');
   input.classList.add('error');
+  
+  // Find or create error message element
+  let errorEl = input.parentNode.querySelector('.error-message');
+  if (!errorEl) {
+    errorEl = document.createElement('span');
+    errorEl.className = 'error-message';
+    input.parentNode.appendChild(errorEl);
+  }
+  errorEl.textContent = message;
+  errorEl.style.display = 'block';
 }
 
 function setSuccess(id) {
@@ -88,6 +114,11 @@ function setSuccess(id) {
   if (!input) return;
   input.classList.remove('error');
   input.classList.add('success');
+  
+  const errorEl = input.parentNode.querySelector('.error-message');
+  if (errorEl) {
+    errorEl.style.display = 'none';
+  }
 }
 
 function shakeElement(el) {
@@ -105,6 +136,10 @@ function validateField(id) {
   if (!val) {
     // Clear any previous error/success state if field is empty
     input.classList.remove('error', 'success');
+    const errorEl = input.parentNode.querySelector('.error-message');
+    if (errorEl) {
+      errorEl.style.display = 'none';
+    }
     return true; // Let browser handle 'required' validation
   }
 
@@ -113,7 +148,7 @@ function validateField(id) {
     
     // Format check
     if (!emailRegex.test(val)) {
-      setError(id, 'Invalid email address.');
+      setError(id, 'Invalid email address format.');
       return false;
     }
 
@@ -129,14 +164,18 @@ function validateField(id) {
     const emailName = domainParts[0];
     const emailTLD = domainParts.slice(1).join('.');
 
-    // Domain and TLD authentication
-    const authenticTLDs = ['com', 'in', 'co.in', 'org', 'net', 'edu', 'gov', 'io', 'co', 'biz', 'info'];
-    const isValidTLD = authenticTLDs.some(tld => emailTLD === tld || emailTLD.endsWith('.' + tld));
+    // Validate TLD generally: only letters and dots, between 2 and 12 chars
+    const isValidTLDFormat = /^[a-z.]{2,12}$/.test(emailTLD);
     const invalidTLDs = ['comm', 'con', 'cmo', 'cpm', 'rom', 'co.m', 'co.in.com', 'in.com'];
     const providerTypos = ['gmai', 'gamil', 'gmal', 'yaho', 'yahooo', 'hotmal', 'hotmai', 'outlok'];
 
-    if (!isValidTLD || invalidTLDs.includes(emailTLD) || providerTypos.includes(emailName)) {
-      setError(id, 'Invalid email address.');
+    if (!isValidTLDFormat || invalidTLDs.includes(emailTLD)) {
+      setError(id, 'Please check your email address domain TLD.');
+      return false;
+    }
+    
+    if (providerTypos.includes(emailName)) {
+      setError(id, 'Please correct the typo in your email domain name.');
       return false;
     }
   }
@@ -145,14 +184,19 @@ function validateField(id) {
     const strippedPhone = val.replace(/[\s-()]/g, ''); 
     const justDigits = strippedPhone.replace('+', '');
     
-    // Authentic format check
-    const isValidFormat = val.startsWith('+') && !/[a-zA-Z]/.test(val) && /^\+\d{10,15}$/.test(strippedPhone);
+    // Authentic format check: optional '+', followed by 10 to 15 digits
+    const isValidFormat = !/[a-zA-Z]/.test(val) && /^\+?\d{10,15}$/.test(strippedPhone);
     
     // Spam sequence prevention
     const isNotSpam = !/^(\d)\1{6,}$/.test(justDigits) && !/1234567/.test(justDigits) && !/9876543/.test(justDigits) && !justDigits.startsWith('00000');
 
-    if (!isValidFormat || !isNotSpam) {
-      setError(id, 'Invalid phone number.');
+    if (!isValidFormat) {
+      setError(id, 'Phone number must contain between 10 and 15 digits.');
+      return false;
+    }
+    
+    if (!isNotSpam) {
+      setError(id, 'Please enter a valid phone number (spam sequences are blocked).');
       return false;
     }
   }
@@ -258,3 +302,84 @@ if (contactForm) {
 /**
  * Scroll Listeners removed to prevent nav background color shifting.
  */
+/**
+ * Scroll Reveal Animations Setup
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Elements to reveal
+  const revealSelectors = [
+    '.pillar-card',
+    '.why-feature',
+    '.source-card',
+    '.process-step',
+    '.partner-card',
+    '.service-item',
+    '.founder-visual',
+    '.founder-content',
+    '.bridge-item',
+    '.stat-item',
+    '.hero-content > *',
+    '.contact-info > *',
+    '.contact-form-container'
+  ];
+
+  // Combine selectors and select all matching elements
+  const elementsToReveal = [];
+  revealSelectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      // Add base reveal class
+      el.classList.add('reveal-on-scroll');
+      elementsToReveal.push(el);
+    });
+  });
+
+  // Stagger delays setup
+  const staggerGroups = [
+    { parent: '.pillar-cards', children: '.pillar-card' },
+    { parent: '.why-features', children: '.why-feature' },
+    { parent: '.source-cards', children: '.source-card' },
+    { parent: '.process-steps', children: '.process-step' },
+    { parent: '.partner-cards', children: '.partner-card' },
+    { parent: '.bridge-items', children: '.bridge-item' },
+    { parent: '.stats-strip .container', children: '.stat-item' }
+  ];
+
+  staggerGroups.forEach(group => {
+    const parent = document.querySelector(group.parent);
+    if (parent) {
+      const children = parent.querySelectorAll(group.children);
+      children.forEach((child, index) => {
+        child.style.transitionDelay = `${index * 0.12}s`;
+      });
+    }
+  });
+
+  // Initialize IntersectionObserver
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.08
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Promote GPU layer just before animating
+        entry.target.style.willChange = 'transform, opacity';
+        // Trigger on next frame to ensure will-change is applied first
+        requestAnimationFrame(() => {
+          entry.target.classList.add('revealed');
+        });
+        // Clear will-change after animation to free GPU memory
+        entry.target.addEventListener('transitionend', () => {
+          entry.target.style.willChange = 'auto';
+        }, { once: true });
+        // Stop observing once revealed
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Start observing
+  elementsToReveal.forEach(el => observer.observe(el));
+});
