@@ -3,7 +3,7 @@
  */
 function showPage(page, e) {
   if (e) e.preventDefault();
-  
+
   // Reset contact form visibility state if previously submitted successfully
   if (page === 'contact') {
     const form = document.getElementById('contactForm');
@@ -13,7 +13,7 @@ function showPage(page, e) {
       success.style.display = 'none';
     }
   }
-  
+
   // Update active page visibility
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const targetPage = document.getElementById('page-' + page);
@@ -67,7 +67,7 @@ function toggleMobile() {
 function toggleCategory(el) {
   const isOpen = el.classList.contains('open');
   const body = el.querySelector('.product-cat-body');
-  
+
   // Close all categories
   document.querySelectorAll('.product-category').forEach(c => {
     c.classList.remove('open');
@@ -77,7 +77,7 @@ function toggleCategory(el) {
       cBody.style.maxHeight = '0px';
     }
   });
-  
+
   // If it was not open, open this one
   if (!isOpen) {
     el.classList.add('open');
@@ -95,9 +95,9 @@ function scrollToService(n, e) {
   if (e) e.preventDefault();
   const target = document.getElementById('service-' + n);
   if (!target) return;
-  
+
   const servicesPage = document.getElementById('page-services');
-  
+
   if (!servicesPage.classList.contains('active')) {
     showPage('services', null);
     // Wait for page transition then scroll
@@ -127,7 +127,7 @@ function setError(id, message) {
   if (!input) return;
   input.classList.remove('success');
   input.classList.add('error');
-  
+
   // Find or create error message element
   let errorEl = input.parentNode.querySelector('.error-message');
   if (!errorEl) {
@@ -144,7 +144,7 @@ function setSuccess(id) {
   if (!input) return;
   input.classList.remove('error');
   input.classList.add('success');
-  
+
   const errorEl = input.parentNode.querySelector('.error-message');
   if (errorEl) {
     errorEl.style.display = 'none';
@@ -162,7 +162,7 @@ function validateField(id) {
   const input = document.getElementById(id);
   if (!input) return false;
   const val = input.value.trim();
-  
+
   if (!val) {
     // Clear any previous error/success state if field is empty
     input.classList.remove('error', 'success');
@@ -175,7 +175,7 @@ function validateField(id) {
 
   if (id === 'f-email') {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    
+
     // Format check
     if (!emailRegex.test(val)) {
       setError(id, 'Invalid email address format.');
@@ -185,7 +185,7 @@ function validateField(id) {
     const emailParts = val.split('@');
     const emailDomain = emailParts[1].toLowerCase();
     const domainParts = emailDomain.split('.');
-    
+
     if (domainParts.length < 2) {
       setError(id, 'Invalid email address.');
       return false;
@@ -203,7 +203,7 @@ function validateField(id) {
       setError(id, 'Please check your email address domain TLD.');
       return false;
     }
-    
+
     if (providerTypos.includes(emailName)) {
       setError(id, 'Please correct the typo in your email domain name.');
       return false;
@@ -211,12 +211,12 @@ function validateField(id) {
   }
 
   if (id === 'f-whatsapp') {
-    const strippedPhone = val.replace(/[\s-()]/g, ''); 
+    const strippedPhone = val.replace(/[\s-()]/g, '');
     const justDigits = strippedPhone.replace('+', '');
-    
+
     // Authentic format check: optional '+', followed by 10 to 15 digits
     const isValidFormat = !/[a-zA-Z]/.test(val) && /^\+?\d{10,15}$/.test(strippedPhone);
-    
+
     // Spam sequence prevention
     const isNotSpam = !/^(\d)\1{6,}$/.test(justDigits) && !/1234567/.test(justDigits) && !/9876543/.test(justDigits) && !justDigits.startsWith('00000');
 
@@ -224,7 +224,7 @@ function validateField(id) {
       setError(id, 'Phone number must contain between 10 and 15 digits.');
       return false;
     }
-    
+
     if (!isNotSpam) {
       setError(id, 'Please enter a valid phone number (spam sequences are blocked).');
       return false;
@@ -238,12 +238,12 @@ function validateField(id) {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   const fields = ['f-name', 'f-company', 'f-email', 'f-whatsapp', 'f-type', 'f-message'];
-  
+
   // Real-time validation
   fields.forEach(id => {
     const el = document.getElementById(id);
     if (el) {
-      el.addEventListener('invalid', function() {
+      el.addEventListener('invalid', function () {
         shakeElement(this);
       });
       el.addEventListener('blur', () => validateField(id));
@@ -255,7 +255,7 @@ if (contactForm) {
     }
   });
 
-  contactForm.addEventListener('submit', async function(e) {
+  contactForm.addEventListener('submit', async function (e) {
     // Check browser's native validity first (handles the 'required' attribute)
     if (!this.checkValidity()) {
       // If native validation fails, let the browser show its own tooltips
@@ -263,7 +263,7 @@ if (contactForm) {
     }
 
     e.preventDefault();
-    
+
     let isValid = true;
     fields.forEach(id => {
       if (!validateField(id)) {
@@ -284,10 +284,10 @@ if (contactForm) {
       }
       return;
     }
-    
+
     const submitBtn = this.querySelector('.form-submit');
     const originalBtnText = submitBtn.innerHTML;
-    
+
     // Update UI to sending state
     submitBtn.disabled = true;
     submitBtn.innerHTML = 'Sending...';
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
     c.setAttribute('role', 'button');
     c.setAttribute('tabindex', '0');
     c.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    
+
     // Add keydown handler for accessibility
     c.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {

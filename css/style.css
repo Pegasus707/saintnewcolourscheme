@@ -121,8 +121,8 @@ nav {
 }
 
 .nav-logo-mark {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +142,7 @@ nav {
 }
 
 .nav-logo-text {
-  height: 36px;
+  height: 32px;
   display: flex;
   align-items: center;
 }
@@ -153,6 +153,28 @@ nav {
   object-fit: contain;
   filter: brightness(0) invert(1);
   /* Forces the logo text to be white for visibility on dark green bg */
+}
+
+/* Picture elements helper styling to ensure child images scale correctly */
+.nav-logo-mark picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-logo-text picture {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.founder-frame picture,
+.service-visual picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -1819,30 +1841,53 @@ body::before {
   gap: 1.5rem;
 }
 
-.contact-detail {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-light);
-}
 
 .contact-detail:last-child {
   border-bottom: none;
 }
 
 .detail-icon {
-  width: 56px;
-  height: 56px;
-  border: 1.5px solid var(--gold);
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: transparent;
+  background: rgba(197, 160, 89, 0.03);
   color: var(--gold);
-  font-size: 2.1rem;
-  line-height: 1;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.detail-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+}
+
+.contact-detail:hover .detail-icon {
+  border-color: var(--gold);
+  background: rgba(197, 160, 89, 0.1);
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.15);
+}
+
+.contact-detail:hover .detail-icon svg {
+  transform: scale(1.1);
 }
 
 .detail-text h5 {
@@ -3261,12 +3306,12 @@ footer {
   }
 
   .nav-logo-mark {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
   }
 
   .nav-logo-text {
-    height: 26px;
+    height: 24px;
   }
 
   /* ─ Hero ─ */

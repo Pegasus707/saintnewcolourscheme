@@ -30,7 +30,8 @@
 
   <!-- ═══ NAVIGATION ═══ -->
   <nav>
-    <div class="nav-logo" onclick="showPage('home')" role="button" aria-label="Saint Sword Home" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); event.preventDefault(); }">
+    <div class="nav-logo" onclick="showPage('home')" role="button" aria-label="Saint Sword Home" tabindex="0"
+      onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); event.preventDefault(); }">
       <div class="nav-logo-mark">
         <img src="assets/images/logo.png" alt="Saint Sword Logo" width="32" height="32" decoding="async">
       </div>
@@ -46,20 +47,24 @@
       <li><a href="#" onclick="showPage('contact', event)" id="nav-contact">Contact</a></li>
     </ul>
     <button class="nav-cta" onclick="showPage('contact')">Get in Touch</button>
-    <div class="hamburger" onclick="toggleMobile()" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { toggleMobile(); event.preventDefault(); }">
+    <div class="hamburger" onclick="toggleMobile()" id="hamburger" role="button" aria-label="Toggle navigation menu"
+      tabindex="0"
+      onkeydown="if(event.key === 'Enter' || event.key === ' ') { toggleMobile(); event.preventDefault(); }">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-logo" onclick="showPage('home');toggleMobile()" role="button" aria-label="Saint Sword Home" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); toggleMobile(); event.preventDefault(); }"
+    <div class="mobile-logo" onclick="showPage('home');toggleMobile()" role="button" aria-label="Saint Sword Home"
+      tabindex="0"
+      onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); toggleMobile(); event.preventDefault(); }"
       style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
       <div class="nav-logo-mark" style="width: 40px; height: 40px;">
         <img src="assets/images/logo.png" alt="Logo" width="40" height="40" decoding="async">
       </div>
       <div class="nav-logo-text" style="height: 30px;">
-        <img src="assets/images/logo-text.png" alt="SAINT SWORD"
-          width="120" height="30" decoding="async" style="height: 100%; width: auto; filter: brightness(0) invert(1);">
+        <img src="assets/images/logo-text.png" alt="SAINT SWORD" width="120" height="30" decoding="async"
+          style="height: 100%; width: auto; filter: brightness(0) invert(1);">
       </div>
     </div>
     <a href="#" onclick="showPage('home', event);toggleMobile()">Home</a>
@@ -73,745 +78,789 @@
        HOME PAGE
   ════════════════════════════════════════ -->
   <main id="main-content">
-  <div class="page active" id="page-home">
+    <div class="page active" id="page-home">
 
-    <!-- Hero -->
-    <section class="hero atmospheric-gradient">
-      <div class="hero-grid-lines"></div>
-      <div class="hero-content">
-        <div class="hero-eyebrow">Global Industrial Sourcing · India Market Insight</div>
-        <h1>Where Global Supply<br>Meets <em>Strategic</em><br>Execution.</h1>
-        <p class="hero-sub">Saint Sword enables businesses to access specialized equipment, industrial machinery and
-          spare parts from global markets. With on-ground execution support, wherever required.</p>
-        <div class="hero-btns">
-          <button class="btn-primary" onclick="showPage('services')">Explore Capabilities <span class="btn-arrow">→</span></button>
-          <button class="btn-outline" onclick="showPage('contact')">Partner With Us</button>
+      <!-- Hero -->
+      <section class="hero atmospheric-gradient">
+        <div class="hero-grid-lines"></div>
+        <div class="hero-content">
+          <div class="hero-eyebrow">Global Industrial Sourcing · India Market Insight</div>
+          <h1>Where Global Supply<br>Meets <em>Strategic</em><br>Execution.</h1>
+          <p class="hero-sub">Saint Sword enables businesses to access specialized equipment, industrial machinery and
+            spare parts from global markets. With on-ground execution support, wherever required.</p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="showPage('services')">Explore Capabilities <span
+                class="btn-arrow">→</span></button>
+            <button class="btn-outline" onclick="showPage('contact')">Partner With Us</button>
+          </div>
         </div>
-      </div>
-      <div class="hero-badge">
-        <span class="hero-badge-num">360°</span>
-        <span class="hero-badge-text">Sourcing to<br>Delivery</span>
-      </div>
-    </section>
+        <div class="hero-badge">
+          <span class="hero-badge-num">360°</span>
+          <span class="hero-badge-text">Sourcing to<br>Delivery</span>
+        </div>
+      </section>
 
-    <!-- Stats -->
-    <div class="stats-strip">
-      <div class="container">
-        <div class="stat-item">
-          <span class="stat-num">Global</span>
-          <span class="stat-label">Manufacturer Access</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">4+</span>
-          <span class="stat-label">Industrial Categories</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">EPC</span>
-          <span class="stat-label">Backed Delivery</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">India</span>
-          <span class="stat-label">Market Insight</span>
+      <!-- Stats -->
+      <div class="stats-strip">
+        <div class="container">
+          <div class="stat-item">
+            <span class="stat-num">Global</span>
+            <span class="stat-label">Manufacturer Access</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Industrial Categories</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">EPC</span>
+            <span class="stat-label">Backed Delivery</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">India</span>
+            <span class="stat-label">Market Insight</span>
+          </div>
         </div>
       </div>
+
+      <!-- What We Do -->
+      <section class="pillars light-atmospheric-gradient">
+        <div class="container">
+          <div class="pillars-header">
+            <div class="label">What We Do</div>
+            <h2>From Global Supply to<br><em>On-Ground Execution</em></h2>
+            <p>Saint Sword operates at the intersection of global sourcing, industrial trade, and market access, going
+              beyond procurement to enable structured sourcing, trade execution, and support through delivery.</p>
+          </div>
+          <div class="grid-3">
+            <div class="pillar-card">
+              <span class="pillar-num">01</span>
+              <div class="pillar-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <h3>Industrial Sourcing</h3>
+              <p>Direct access to verified manufacturers across global markets. No unnecessary layers, no hidden
+                markups.
+                Just the right supplier at the right price.</p>
+            </div>
+            <div class="pillar-card">
+              <span class="pillar-num">02</span>
+              <div class="pillar-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <h3>Strategic Trade Execution</h3>
+              <p>Commercial structuring, supplier negotiation, and end-to-end transaction management. We protect your
+                interests through every stage of the deal.</p>
+            </div>
+            <div class="pillar-card">
+              <span class="pillar-num">03</span>
+              <div class="pillar-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20" />
+                  <path d="M2 12h20" />
+                  <path d="M12 2a14.5 14.5 0 0 1 0 20" />
+                </svg>
+              </div>
+              <h3>Market Access & EPC Integration</h3>
+              <p>Seamless transition from sourcing to project execution through aligned EPC capabilities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Saint Sword -->
+      <section class="why atmospheric-gradient">
+        <div class="container">
+          <div class="why-grid">
+            <div class="why-content">
+              <div class="label">Why Saint Sword</div>
+              <h2>Not a Middleman.<br>A Strategic <em>Advantage.</em></h2>
+              <p>In a landscape crowded with brokers and intermediaries, Saint Sword functions as a strategic layer,
+                combining sourcing intelligence, commercial discipline, and execution capability to create measurable
+                advantage for our partners.</p>
+              <p>We understand India's regulatory, commercial, and operational landscape, combining that knowledge with
+                direct manufacturer relationships to unlock value that others simply cannot.</p>
+              <div class="why-closing">
+                We don't just move goods: we enable decisions, deals, and delivery.
+              </div>
+            </div>
+            <div class="why-features">
+              <div class="why-feature">
+                <h4>Direct Manufacturer Access</h4>
+                <p>We eliminate unnecessary layers and hidden markups, connecting you directly with the right
+                  manufacturers at globally competitive prices.</p>
+              </div>
+              <div class="why-feature">
+                <h4>Aggregation-Driven Pricing</h4>
+                <p>Unlock bulk pricing advantages across multiple clients and categories, a structural cost advantage
+                  that
+                  solo procurement simply cannot achieve.</p>
+              </div>
+              <div class="why-feature">
+                <h4>Execution-Linked Supply</h4>
+                <p>Our sourcing aligns with real project requirements, with the ability to support execution where
+                  needed.
+                </p>
+              </div>
+              <div class="why-feature">
+                <h4>India Market Insight</h4>
+                <p>Built natively for India's unique regulatory, commercial, and operational environment. No adaptation
+                  lag. No compliance surprises.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What We Source -->
+      <section class="source-section light-atmospheric-gradient">
+        <div class="container">
+          <div class="source-header">
+            <div class="label">What We Source</div>
+            <h2>Specialized Industrial<br><em>Categories</em></h2>
+            <p>Focused on high-value, niche categories where specialized expertise creates a decisive edge.</p>
+          </div>
+          <div class="grid-4">
+            <div class="source-card">
+              <span class="source-icon">⚙️</span>
+              <h3>Industrial Equipment & Machinery</h3>
+              <p>Heavy-duty and specialized machinery across manufacturing, processing, and infrastructure sectors.</p>
+            </div>
+            <div class="source-card">
+              <span class="source-icon">🌿</span>
+              <h3>Emission Control & Environmental Systems</h3>
+              <p>Advanced environmental compliance systems for industrial facilities and large-scale operations.</p>
+            </div>
+            <div class="source-card">
+              <span class="source-icon">🧪</span>
+              <h3>Specialty Chemicals & Materials</h3>
+              <p>High-performance industrial chemicals, composites, and specialty materials for niche applications.</p>
+            </div>
+            <div class="source-card">
+              <span class="source-icon">🏗️</span>
+              <h3>Process & Infrastructure Components</h3>
+              <p>Critical components for industrial process infrastructure, from valves to structural systems.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="process atmospheric-gradient">
+        <div class="container">
+          <div class="process-header">
+            <div class="label" style="justify-content:center">Our Process</div>
+            <h2>From Requirement to <em>Delivery</em></h2>
+          </div>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <h4>Requirement Mapping</h4>
+              <p>Deep-dive into your technical and commercial requirements to define the sourcing brief.</p>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <h4>Supplier Identification</h4>
+              <p>We identify and shortlist verified global manufacturers with proven capability.</p>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <h4>Commercial Structuring</h4>
+              <p>Negotiate pricing, payment terms, and contractual protections on your behalf.</p>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <h4>Quality Validation</h4>
+              <p>Factory inspections and quality assurance before goods leave the source country.</p>
+            </div>
+            <div class="process-step">
+              <div class="step-num">05</div>
+              <h4>Logistics & Compliance</h4>
+              <p>End-to-end shipping coordination, import compliance, and documentation management.</p>
+            </div>
+            <div class="process-step">
+              <div class="step-num">06</div>
+              <h4>Delivery & Integration</h4>
+              <p>Final mile delivery and seamless integration with your project or facility.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bridge -->
+      <section class="bridge light-atmospheric-gradient">
+        <div class="container">
+          <div class="label" style="justify-content:center">The India Advantage</div>
+          <h2>Connecting Global Capability<br>with <em>India's Demand</em></h2>
+          <p>India is one of the fastest-growing industrial markets globally, remaining structurally dependent on
+            imported
+            technologies and specialized products. Saint Sword acts as the bridge, unlocking access in both directions.
+          </p>
+          <div class="bridge-items">
+            <div class="bridge-item">
+              <span class="bridge-item-icon">→</span>
+              <p><strong style="color: var(--white); font-weight: 700; letter-spacing: 0.02em;">Global
+                  manufacturers</strong>
+                gain a trusted partner with regulatory
+                support and customer access.</p>
+            </div>
+            <div class="bridge-item">
+              <span class="bridge-item-icon">→</span>
+              <p><strong style="color: var(--white); font-weight: 700; letter-spacing: 0.02em;">Indian
+                  businesses</strong>
+                access global supply chains with speed,
+                cost-efficiency, and operational reliability.</p>
+            </div>
+            <div class="bridge-item">
+              <span class="bridge-item-icon">→</span>
+              <p><strong style="color: var(--white); font-weight: 700; letter-spacing: 0.02em;">Projects move
+                  faster</strong>
+                through our EPC-linked sourcing model,
+                eliminating the gap between supply and execution.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Partnership -->
+      <section class="partners atmospheric-gradient">
+        <div class="container">
+          <div class="label" style="justify-content:center">Associations</div>
+          <h2>Built for <em>Long-Term</em> Partnerships</h2>
+          <div class="partner-cards">
+            <div class="partner-card">
+              <div class="partner-type">For Global Manufacturers</div>
+              <h3>Enter & Scale<br>in India</h3>
+              <p>Leverage our deep India market insight, established relationships, and commercial expertise to
+                establish
+                and grow your presence in one of the world's most dynamic industrial markets, through a partner you can
+                trust.</p>
+            </div>
+            <div class="partner-card">
+              <div class="partner-type">For Indian Businesses</div>
+              <h3>Access World-Class<br>Global Supply</h3>
+              <p>Unlock access to the world's best manufacturers with the commercial protection, quality assurance, and
+                logistical expertise that makes global sourcing reliable, cost-effective, and genuinely competitive.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-band light-atmospheric-gradient">
+        <div class="container">
+          <div class="label" style="justify-content:center">Ready to Begin?</div>
+          <h2>Build Your Global<br>Supply Advantage.</h2>
+          <p>Whether you're sourcing globally or entering India, we enable both. Every partnership starts with a
+            conversation.</p>
+          <div class="cta-btns">
+            <button class="btn-primary" onclick="showPage('contact')">Send Enquiry <span
+                class="btn-arrow">→</span></button>
+            <button class="btn-outline" onclick="showPage('contact')">Explore Partnerships</button>
+          </div>
+        </div>
+      </section>
+
     </div>
 
-    <!-- What We Do -->
-    <section class="pillars light-atmospheric-gradient">
-      <div class="container">
-        <div class="pillars-header">
-          <div class="label">What We Do</div>
-          <h2>From Global Supply to<br><em>On-Ground Execution</em></h2>
-          <p>Saint Sword operates at the intersection of global sourcing, industrial trade, and market access, going
-            beyond procurement to enable structured sourcing, trade execution, and support through delivery.</p>
-        </div>
-        <div class="grid-3">
-          <div class="pillar-card">
-            <span class="pillar-num">01</span>
-            <div class="pillar-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            </div>
-            <h3>Industrial Sourcing</h3>
-            <p>Direct access to verified manufacturers across global markets. No unnecessary layers, no hidden markups.
-              Just the right supplier at the right price.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">02</span>
-            <div class="pillar-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
-            </div>
-            <h3>Strategic Trade Execution</h3>
-            <p>Commercial structuring, supplier negotiation, and end-to-end transaction management. We protect your
-              interests through every stage of the deal.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">03</span>
-            <div class="pillar-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 2a14.5 14.5 0 0 0 0 20" />
-                <path d="M2 12h20" />
-                <path d="M12 2a14.5 14.5 0 0 1 0 20" />
-              </svg>
-            </div>
-            <h3>Market Access & EPC Integration</h3>
-            <p>Seamless transition from sourcing to project execution through aligned EPC capabilities.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Saint Sword -->
-    <section class="why atmospheric-gradient">
-      <div class="container">
-        <div class="why-grid">
-          <div class="why-content">
-            <div class="label">Why Saint Sword</div>
-            <h2>Not a Middleman.<br>A Strategic <em>Advantage.</em></h2>
-            <p>In a landscape crowded with brokers and intermediaries, Saint Sword functions as a strategic layer,
-              combining sourcing intelligence, commercial discipline, and execution capability to create measurable
-              advantage for our partners.</p>
-            <p>We understand India's regulatory, commercial, and operational landscape, combining that knowledge with
-              direct manufacturer relationships to unlock value that others simply cannot.</p>
-            <div class="why-closing">
-              We don't just move goods: we enable decisions, deals, and delivery.
-            </div>
-          </div>
-          <div class="why-features">
-            <div class="why-feature">
-              <h4>Direct Manufacturer Access</h4>
-              <p>We eliminate unnecessary layers and hidden markups, connecting you directly with the right
-                manufacturers at globally competitive prices.</p>
-            </div>
-            <div class="why-feature">
-              <h4>Aggregation-Driven Pricing</h4>
-              <p>Unlock bulk pricing advantages across multiple clients and categories, a structural cost advantage that
-                solo procurement simply cannot achieve.</p>
-            </div>
-            <div class="why-feature">
-              <h4>Execution-Linked Supply</h4>
-              <p>Our sourcing aligns with real project requirements, with the ability to support execution where needed.
-              </p>
-            </div>
-            <div class="why-feature">
-              <h4>India Market Insight</h4>
-              <p>Built natively for India's unique regulatory, commercial, and operational environment. No adaptation
-                lag. No compliance surprises.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What We Source -->
-    <section class="source-section light-atmospheric-gradient">
-      <div class="container">
-        <div class="source-header">
-          <div class="label">What We Source</div>
-          <h2>Specialized Industrial<br><em>Categories</em></h2>
-          <p>Focused on high-value, niche categories where specialized expertise creates a decisive edge.</p>
-        </div>
-        <div class="grid-4">
-          <div class="source-card">
-            <span class="source-icon">⚙️</span>
-            <h3>Industrial Equipment & Machinery</h3>
-            <p>Heavy-duty and specialized machinery across manufacturing, processing, and infrastructure sectors.</p>
-          </div>
-          <div class="source-card">
-            <span class="source-icon">🌿</span>
-            <h3>Emission Control & Environmental Systems</h3>
-            <p>Advanced environmental compliance systems for industrial facilities and large-scale operations.</p>
-          </div>
-          <div class="source-card">
-            <span class="source-icon">🧪</span>
-            <h3>Specialty Chemicals & Materials</h3>
-            <p>High-performance industrial chemicals, composites, and specialty materials for niche applications.</p>
-          </div>
-          <div class="source-card">
-            <span class="source-icon">🏗️</span>
-            <h3>Process & Infrastructure Components</h3>
-            <p>Critical components for industrial process infrastructure, from valves to structural systems.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section class="process atmospheric-gradient">
-      <div class="container">
-        <div class="process-header">
-          <div class="label" style="justify-content:center">Our Process</div>
-          <h2>From Requirement to <em>Delivery</em></h2>
-        </div>
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="step-num">01</div>
-            <h4>Requirement Mapping</h4>
-            <p>Deep-dive into your technical and commercial requirements to define the sourcing brief.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-num">02</div>
-            <h4>Supplier Identification</h4>
-            <p>We identify and shortlist verified global manufacturers with proven capability.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-num">03</div>
-            <h4>Commercial Structuring</h4>
-            <p>Negotiate pricing, payment terms, and contractual protections on your behalf.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-num">04</div>
-            <h4>Quality Validation</h4>
-            <p>Factory inspections and quality assurance before goods leave the source country.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-num">05</div>
-            <h4>Logistics & Compliance</h4>
-            <p>End-to-end shipping coordination, import compliance, and documentation management.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-num">06</div>
-            <h4>Delivery & Integration</h4>
-            <p>Final mile delivery and seamless integration with your project or facility.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bridge -->
-    <section class="bridge light-atmospheric-gradient">
-      <div class="container">
-        <div class="label" style="justify-content:center">The India Advantage</div>
-        <h2>Connecting Global Capability<br>with <em>India's Demand</em></h2>
-        <p>India is one of the fastest-growing industrial markets globally, remaining structurally dependent on imported
-          technologies and specialized products. Saint Sword acts as the bridge, unlocking access in both directions.
-        </p>
-        <div class="bridge-items">
-          <div class="bridge-item">
-            <span class="bridge-item-icon">→</span>
-            <p><strong style="color: var(--white); font-weight: 700; letter-spacing: 0.02em;">Global
-                manufacturers</strong>
-              gain a trusted partner with regulatory
-              support and customer access.</p>
-          </div>
-          <div class="bridge-item">
-            <span class="bridge-item-icon">→</span>
-            <p><strong style="color: var(--white); font-weight: 700; letter-spacing: 0.02em;">Indian businesses</strong>
-              access global supply chains with speed,
-              cost-efficiency, and operational reliability.</p>
-          </div>
-          <div class="bridge-item">
-            <span class="bridge-item-icon">→</span>
-            <p><strong style="color: var(--white); font-weight: 700; letter-spacing: 0.02em;">Projects move
-                faster</strong>
-              through our EPC-linked sourcing model,
-              eliminating the gap between supply and execution.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partnership -->
-    <section class="partners atmospheric-gradient">
-      <div class="container">
-        <div class="label" style="justify-content:center">Associations</div>
-        <h2>Built for <em>Long-Term</em> Partnerships</h2>
-        <div class="partner-cards">
-          <div class="partner-card">
-            <div class="partner-type">For Global Manufacturers</div>
-            <h3>Enter & Scale<br>in India</h3>
-            <p>Leverage our deep India market insight, established relationships, and commercial expertise to establish
-              and grow your presence in one of the world's most dynamic industrial markets, through a partner you can
-              trust.</p>
-          </div>
-          <div class="partner-card">
-            <div class="partner-type">For Indian Businesses</div>
-            <h3>Access World-Class<br>Global Supply</h3>
-            <p>Unlock access to the world's best manufacturers with the commercial protection, quality assurance, and
-              logistical expertise that makes global sourcing reliable, cost-effective, and genuinely competitive.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-band light-atmospheric-gradient">
-      <div class="container">
-        <div class="label" style="justify-content:center">Ready to Begin?</div>
-        <h2>Build Your Global<br>Supply Advantage.</h2>
-        <p>Whether you're sourcing globally or entering India, we enable both. Every partnership starts with a
-          conversation.</p>
-        <div class="cta-btns">
-          <button class="btn-primary" onclick="showPage('contact')">Send Enquiry <span class="btn-arrow">→</span></button>
-          <button class="btn-outline" onclick="showPage('contact')">Explore Partnerships</button>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        ABOUT PAGE
   ════════════════════════════════════════ -->
-  <div class="page" id="page-about">
+    <div class="page" id="page-about">
 
-    <div class="about-hero atmospheric-gradient">
-      <div class="about-hero-grid"></div>
-      <div class="about-hero-content container">
-        <div class="label">About Saint Sword</div>
-        <h1>Building the Infrastructure<br>Behind <em>Global Trade</em></h1>
-        <p>We exist to bridge the gap between industrial access and operational friction.</p>
+      <div class="about-hero atmospheric-gradient">
+        <div class="about-hero-grid"></div>
+        <div class="about-hero-content container">
+          <div class="label">About Saint Sword</div>
+          <h1>Building the Infrastructure<br>Behind <em>Global Trade</em></h1>
+          <p>We exist to bridge the gap between industrial access and operational friction.</p>
+        </div>
       </div>
+
+      <section class="about-story light-atmospheric-gradient">
+        <div class="container">
+          <div class="about-story-grid">
+            <div class="about-story-side">
+              <div class="label">Our Story</div>
+              <h3>The Problem<br>We Were <em>Built to Solve</em></h3>
+              <div class="positioning">
+                <p>Better sourcing begins with better decisions</p>
+              </div>
+            </div>
+            <div class="about-story-main">
+              <p>Industrial demand in India continues to grow across infrastructure, energy, and manufacturing. Yet
+                access
+                to the right supply remains fragmented. Supplier discovery lacks structure, pricing varies widely, and
+                multiple layers often increase cost without improving outcomes.</p>
+              <p>Sourcing decisions are also not always aligned with on-ground realities. This leads to delays,
+                inefficiencies, and avoidable commercial risk.</p>
+              <p>Over time, these gaps have become accepted.</p>
+              <p>Saint Sword addresses this by bringing a more structured and commercially disciplined approach to
+                sourcing; grounded in global supply dynamics and real execution considerations in India.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="vision-section atmospheric-gradient">
+        <div class="container">
+          <div class="grid-2">
+            <div>
+              <div class="label">Our Vision</div>
+              <h2>Where Reliability <br> Becomes <em>Reputation<br></em></h2>
+              <p>We aim to build long-term trust by working with the right partners, maintaining clarity in every
+                transaction, and following through with consistency.</p>
+              <p style="margin-top:1.5rem;">Over time, the goal is to build a dependable presence in industrial trade -
+                one that clients rely on when decisions carry real commercial weight.</p>
+            </div>
+            <div style="display:flex;align-items:center;">
+              <blockquote>
+                "To earn trust through judgment that endures, not transactions that pass."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="founder-section">
+        <div class="container">
+          <div class="founder-grid">
+            <div class="founder-visual">
+              <div class="founder-frame">
+                <img src="assets/images/raahil-talwar.png" alt="Raahil Talwar" loading="lazy" decoding="async"
+                  width="300" height="400">
+              </div>
+              <div class="founder-name-plate">
+                <h4>Raahil Talwar</h4>
+                <span>Managing Director & CEO</span>
+              </div>
+            </div>
+            <div class="founder-content">
+              <div class="label">Team</div>
+              <p>Raahil Talwar founded Saint Sword with a clear focus to bring greater structure, clarity, and
+                reliability
+                into industrial sourcing and trade.</p>
+              <p>The traditional model often lacks transparency, depth of relationships, and alignment with real project
+                needs. There is a clear opportunity to operate differently by combining better market understanding,
+                access to specialized categories, and a more disciplined approach to commercial execution.</p>
+              <p>Raahil's focus is on building Saint Sword at that intersection, where supply decisions are informed,
+                transactions are well-structured, and outcomes are dependable.</p>
+              <p>Beyond facilitating trade, the company is designed to add value across the process, from identifying
+                the
+                right suppliers to supporting delivery where required. This is the foundation on which the company is
+                being built.</p>
+              <div style="margin-top:2.5rem;">
+                <a href="https://linkedin.com/in/raahiltalwar" class="btn-primary" target="_blank"
+                  rel="noopener noreferrer">Connect with Raahil <span class="btn-arrow">→</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band atmospheric-gradient">
+        <div class="container">
+          <h2>Partner with Us</h2>
+          <p>Whether you're a global manufacturer seeking India entry or an Indian business seeking global supply, let's
+            talk.</p>
+          <div class="cta-btns">
+            <button class="btn-primary" onclick="showPage('contact')">Send Enquiry <span
+                class="btn-arrow">→</span></button>
+            <button class="btn-outline" onclick="showPage('services')">Explore Our Services</button>
+          </div>
+        </div>
+      </section>
+
     </div>
 
-    <section class="about-story light-atmospheric-gradient">
-      <div class="container">
-        <div class="about-story-grid">
-          <div class="about-story-side">
-            <div class="label">Our Story</div>
-            <h3>The Problem<br>We Were <em>Built to Solve</em></h3>
-            <div class="positioning">
-              <p>Better sourcing begins with better decisions</p>
-            </div>
-          </div>
-          <div class="about-story-main">
-            <p>Industrial demand in India continues to grow across infrastructure, energy, and manufacturing. Yet access
-              to the right supply remains fragmented. Supplier discovery lacks structure, pricing varies widely, and
-              multiple layers often increase cost without improving outcomes.</p>
-            <p>Sourcing decisions are also not always aligned with on-ground realities. This leads to delays,
-              inefficiencies, and avoidable commercial risk.</p>
-            <p>Over time, these gaps have become accepted.</p>
-            <p>Saint Sword addresses this by bringing a more structured and commercially disciplined approach to
-              sourcing; grounded in global supply dynamics and real execution considerations in India.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="vision-section atmospheric-gradient">
-      <div class="container">
-        <div class="grid-2">
-          <div>
-            <div class="label">Our Vision</div>
-            <h2>Where Reliability <br> Becomes <em>Reputation<br></em></h2>
-            <p>We aim to build long-term trust by working with the right partners, maintaining clarity in every
-              transaction, and following through with consistency.</p>
-            <p style="margin-top:1.5rem;">Over time, the goal is to build a dependable presence in industrial trade -
-              one that clients rely on when decisions carry real commercial weight.</p>
-          </div>
-          <div style="display:flex;align-items:center;">
-            <blockquote>
-              "To earn trust through judgment that endures, not transactions that pass."
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="founder-section">
-      <div class="container">
-        <div class="founder-grid">
-          <div class="founder-visual">
-            <div class="founder-frame">
-              <img src="assets/images/raahil-talwar.png" alt="Raahil Talwar" loading="lazy" decoding="async" width="300" height="400">
-            </div>
-            <div class="founder-name-plate">
-              <h4>Raahil Talwar</h4>
-              <span>Managing Director & CEO</span>
-            </div>
-          </div>
-          <div class="founder-content">
-            <div class="label">Team</div>
-            <p>Raahil Talwar founded Saint Sword with a clear focus to bring greater structure, clarity, and reliability
-              into industrial sourcing and trade.</p>
-            <p>The traditional model often lacks transparency, depth of relationships, and alignment with real project
-              needs. There is a clear opportunity to operate differently by combining better market understanding,
-              access to specialized categories, and a more disciplined approach to commercial execution.</p>
-            <p>Raahil's focus is on building Saint Sword at that intersection, where supply decisions are informed,
-              transactions are well-structured, and outcomes are dependable.</p>
-            <p>Beyond facilitating trade, the company is designed to add value across the process, from identifying the
-              right suppliers to supporting delivery where required. This is the foundation on which the company is
-              being built.</p>
-            <div style="margin-top:2.5rem;">
-              <a href="https://linkedin.com/in/raahiltalwar" class="btn-primary" target="_blank"
-                rel="noopener noreferrer">Connect with Raahil <span class="btn-arrow">→</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-band atmospheric-gradient">
-      <div class="container">
-        <h2>Partner with Us</h2>
-        <p>Whether you're a global manufacturer seeking India entry or an Indian business seeking global supply, let's
-          talk.</p>
-        <div class="cta-btns">
-          <button class="btn-primary" onclick="showPage('contact')">Send Enquiry <span class="btn-arrow">→</span></button>
-          <button class="btn-outline" onclick="showPage('services')">Explore Our Services</button>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        SERVICES PAGE
   ════════════════════════════════════════ -->
-  <div class="page" id="page-services">
+    <div class="page" id="page-services">
 
-    <div class="services-hero atmospheric-gradient">
-      <div class="container" style="position:relative;z-index:2">
-        <div class="label">Our Capabilities</div>
-        <h1>What We <em>Do</em></h1>
-        <p>Our integrated capabilities are designed to move seamlessly from requirement to delivery across geographies,
-          categories, and project scales.</p>
+      <div class="services-hero atmospheric-gradient">
+        <div class="container" style="position:relative;z-index:2">
+          <div class="label">Our Capabilities</div>
+          <h1>What We <em>Do</em></h1>
+          <p>Our integrated capabilities are designed to move seamlessly from requirement to delivery across
+            geographies,
+            categories, and project scales.</p>
+        </div>
       </div>
+
+      <div class="service-block light-atmospheric-gradient">
+        <div class="service-item" id="service-1">
+          <div class="service-meta">
+            <span class="service-num">01</span>
+            <div class="label">Core Capability</div>
+            <h2>Global Industrial Sourcing</h2>
+            <p>We identify, validate, and engage the right manufacturers for your specific industrial requirement across
+              global markets, with speed precision, and commercial intelligence.</p>
+            <ul class="service-list">
+              <li>Supplier identification and market mapping</li>
+              <li>Factory visits and on-ground validation</li>
+              <li>Competitive price negotiation</li>
+              <li>Sample procurement and technical review</li>
+              <li>Manufacturer relationship management</li>
+            </ul>
+          </div>
+          <div class="service-visual">
+            <img src="assets/images/global_industrial_sourcing.jpg" alt="Global Industrial Sourcing" loading="lazy"
+              decoding="async" width="800" height="800">
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block light-atmospheric-gradient">
+        <div class="service-item reverse" id="service-2">
+          <div class="service-meta">
+            <span class="service-num">02</span>
+            <div class="label">Commercial Layer</div>
+            <h2>Trading & Commercial Structuring</h2>
+            <p>Beyond sourcing, we manage the commercial architecture of every deal ensuring that pricing, payment
+              terms,
+              and contractual frameworks are structured in your best interest.</p>
+            <ul class="service-list">
+              <li>Deal negotiation and term structuring</li>
+              <li>Contract drafting and review support</li>
+              <li>Risk identification and mitigation</li>
+              <li>Payment terms and LC management</li>
+              <li>Multi-party commercial coordination</li>
+            </ul>
+          </div>
+          <div class="service-visual">
+            <img src="assets/images/commercial_structuring.jpg" alt="Commercial Structuring" loading="lazy"
+              decoding="async" width="800" height="800">
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block light-atmospheric-gradient">
+        <div class="service-item" id="service-3">
+          <div class="service-meta">
+            <span class="service-num">03</span>
+            <div class="label">Logistics & Compliance</div>
+            <h2>Supply Chain Execution</h2>
+            <p>From factory floor to project site, we manage the full execution pipeline, coordinating logistics,
+              navigating import compliance, and ensuring on-time intact delivery.</p>
+            <ul class="service-list">
+              <li>Freight coordination (sea and air)</li>
+              <li>Import documentation and compliance</li>
+              <li>Customs clearance management</li>
+              <li>Last-mile delivery coordination</li>
+              <li>Quality inspection at source</li>
+            </ul>
+          </div>
+          <div class="service-visual">
+            <img src="assets/images/supply_chain_execution.jpg" alt="Supply Chain Execution" loading="lazy"
+              decoding="async" width="800" height="800">
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block light-atmospheric-gradient">
+        <div class="service-item reverse" id="service-4">
+          <div class="service-meta">
+            <span class="service-num">04</span>
+            <div class="label">India Market Entry</div>
+            <h2>Market Access (India)</h2>
+            <p>For global manufacturers, we provide the local intelligence, customer access, and commercial support
+              needed
+              to establish a meaningful, scalable presence in the Indian industrial market.</p>
+            <ul class="service-list">
+              <li>India market entry strategy</li>
+              <li>Customer identification and introductions</li>
+              <li>Regulatory and compliance guidance</li>
+              <li>EPC partner integration</li>
+              <li>Ongoing commercial representation</li>
+            </ul>
+          </div>
+          <div class="service-visual">
+            <img src="assets/images/india_market_access.jpg" alt="India Market Access" loading="lazy" decoding="async"
+              width="800" height="800">
+          </div>
+        </div>
+      </div>
+
+      <section class="cta-band atmospheric-gradient">
+        <div class="container">
+          <h2>Need a Specific<br><em>Capability?</em></h2>
+          <p>Every engagement is tailored. Tell us your requirement and we'll structure the right solution.</p>
+          <div class="cta-btns">
+            <button class="btn-primary" onclick="showPage('contact')">Discuss Your Requirement <span
+                class="btn-arrow">→</span></button>
+            <button class="btn-outline" onclick="showPage('products')">View Product Categories</button>
+          </div>
+        </div>
+      </section>
+
     </div>
 
-    <div class="service-block light-atmospheric-gradient">
-      <div class="service-item" id="service-1">
-        <div class="service-meta">
-          <span class="service-num">01</span>
-          <div class="label">Core Capability</div>
-          <h2>Global Industrial Sourcing</h2>
-          <p>We identify, validate, and engage the right manufacturers for your specific industrial requirement across
-            global markets, with speed precision, and commercial intelligence.</p>
-          <ul class="service-list">
-            <li>Supplier identification and market mapping</li>
-            <li>Factory visits and on-ground validation</li>
-            <li>Competitive price negotiation</li>
-            <li>Sample procurement and technical review</li>
-            <li>Manufacturer relationship management</li>
-          </ul>
-        </div>
-        <div class="service-visual">
-          <img src="assets/images/global_industrial_sourcing.jpg" alt="Global Industrial Sourcing" loading="lazy" decoding="async" width="800" height="800">
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block light-atmospheric-gradient">
-      <div class="service-item reverse" id="service-2">
-        <div class="service-meta">
-          <span class="service-num">02</span>
-          <div class="label">Commercial Layer</div>
-          <h2>Trading & Commercial Structuring</h2>
-          <p>Beyond sourcing, we manage the commercial architecture of every deal ensuring that pricing, payment terms,
-            and contractual frameworks are structured in your best interest.</p>
-          <ul class="service-list">
-            <li>Deal negotiation and term structuring</li>
-            <li>Contract drafting and review support</li>
-            <li>Risk identification and mitigation</li>
-            <li>Payment terms and LC management</li>
-            <li>Multi-party commercial coordination</li>
-          </ul>
-        </div>
-        <div class="service-visual">
-          <img src="assets/images/commercial_structuring.jpg" alt="Commercial Structuring" loading="lazy" decoding="async" width="800" height="800">
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block light-atmospheric-gradient">
-      <div class="service-item" id="service-3">
-        <div class="service-meta">
-          <span class="service-num">03</span>
-          <div class="label">Logistics & Compliance</div>
-          <h2>Supply Chain Execution</h2>
-          <p>From factory floor to project site, we manage the full execution pipeline, coordinating logistics,
-            navigating import compliance, and ensuring on-time intact delivery.</p>
-          <ul class="service-list">
-            <li>Freight coordination (sea and air)</li>
-            <li>Import documentation and compliance</li>
-            <li>Customs clearance management</li>
-            <li>Last-mile delivery coordination</li>
-            <li>Quality inspection at source</li>
-          </ul>
-        </div>
-        <div class="service-visual">
-          <img src="assets/images/supply_chain_execution.jpg" alt="Supply Chain Execution" loading="lazy" decoding="async" width="800" height="800">
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block light-atmospheric-gradient">
-      <div class="service-item reverse" id="service-4">
-        <div class="service-meta">
-          <span class="service-num">04</span>
-          <div class="label">India Market Entry</div>
-          <h2>Market Access (India)</h2>
-          <p>For global manufacturers, we provide the local intelligence, customer access, and commercial support needed
-            to establish a meaningful, scalable presence in the Indian industrial market.</p>
-          <ul class="service-list">
-            <li>India market entry strategy</li>
-            <li>Customer identification and introductions</li>
-            <li>Regulatory and compliance guidance</li>
-            <li>EPC partner integration</li>
-            <li>Ongoing commercial representation</li>
-          </ul>
-        </div>
-        <div class="service-visual">
-          <img src="assets/images/india_market_access.jpg" alt="India Market Access" loading="lazy" decoding="async" width="800" height="800">
-        </div>
-      </div>
-    </div>
-
-    <section class="cta-band atmospheric-gradient">
-      <div class="container">
-        <h2>Need a Specific<br><em>Capability?</em></h2>
-        <p>Every engagement is tailored. Tell us your requirement and we'll structure the right solution.</p>
-        <div class="cta-btns">
-          <button class="btn-primary" onclick="showPage('contact')">Discuss Your Requirement <span class="btn-arrow">→</span></button>
-          <button class="btn-outline" onclick="showPage('products')">View Product Categories</button>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        PRODUCTS PAGE
   ════════════════════════════════════════ -->
-  <div class="page" id="page-products">
+    <div class="page" id="page-products">
 
-    <div class="products-hero atmospheric-gradient">
-      <div class="container" style="position:relative;z-index:2">
-        <div class="label">Industrial Categories</div>
-        <h1>What We <em>Source</em></h1>
-        <p>We focus on specialized, high-value industrial categories where deep expertise and direct manufacturer
-          relationships create genuine competitive advantage.</p>
+      <div class="products-hero atmospheric-gradient">
+        <div class="container" style="position:relative;z-index:2">
+          <div class="label">Industrial Categories</div>
+          <h1>What We <em>Source</em></h1>
+          <p>We focus on specialized, high-value industrial categories where deep expertise and direct manufacturer
+            relationships create genuine competitive advantage.</p>
+        </div>
       </div>
+
+      <section class="products-grid light-atmospheric-gradient">
+        <div class="container">
+          <div class="products-intro">
+            <div class="label" style="justify-content:center">Our Sourcing Scope</div>
+            <h2>Specialized. Niche. <em>Margin-Accretive.</em></h2>
+            <p>Saint Sword focuses exclusively on industrial categories where specialized knowledge, supplier
+              relationships, and sourcing discipline create measurable value.</p>
+          </div>
+
+          <div class="product-category open" onclick="toggleCategory(this)">
+            <div class="product-cat-header">
+              <span class="product-cat-num">01</span>
+              <div class="product-cat-title">
+                <h3>Industrial Equipment & Machinery</h3>
+                <p>Heavy-duty processing and manufacturing equipment</p>
+              </div>
+              <span class="product-cat-arrow">→</span>
+            </div>
+            <div class="product-cat-body">
+              <div class="product-tags">
+                <span class="product-tag">Crushing & Grinding Equipment</span>
+                <span class="product-tag">Conveyors & Material Handling</span>
+                <span class="product-tag">Industrial Pumps & Compressors</span>
+                <span class="product-tag">Heat Exchangers</span>
+                <span class="product-tag">Mixing & Blending Systems</span>
+                <span class="product-tag">Filtration Equipment</span>
+                <span class="product-tag">Reactor Vessels</span>
+                <span class="product-tag">Industrial Dryers</span>
+                <span class="product-tag">Boilers & Pressure Vessels</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-category" onclick="toggleCategory(this)">
+            <div class="product-cat-header">
+              <span class="product-cat-num">02</span>
+              <div class="product-cat-title">
+                <h3>Emission Control & Environmental Systems</h3>
+                <p>Advanced environmental compliance and air quality management</p>
+              </div>
+              <span class="product-cat-arrow">→</span>
+            </div>
+            <div class="product-cat-body">
+              <div class="product-tags">
+                <span class="product-tag">Electrostatic Precipitators (ESP)</span>
+                <span class="product-tag">Bag Filter Systems</span>
+                <span class="product-tag">Wet Scrubbers</span>
+                <span class="product-tag">Selective Catalytic Reduction (SCR)</span>
+                <span class="product-tag">Flue Gas Desulfurization</span>
+                <span class="product-tag">De-NOx Systems</span>
+                <span class="product-tag">Industrial Cyclones</span>
+                <span class="product-tag">Activated Carbon Systems</span>
+                <span class="product-tag">Catalytic Oxidise</span>
+                <span class="product-tag">Flare System</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-category" onclick="toggleCategory(this)">
+            <div class="product-cat-header">
+              <span class="product-cat-num">03</span>
+              <div class="product-cat-title">
+                <h3>Specialty Chemicals & Materials</h3>
+                <p>High-performance industrial chemicals, composites, and advanced materials</p>
+              </div>
+              <span class="product-cat-arrow">→</span>
+            </div>
+            <div class="product-cat-body">
+              <div class="product-tags">
+                <span class="product-tag">Industrial Catalysts</span>
+                <span class="product-tag">Specialty Polymers & Resins</span>
+                <span class="product-tag">Activated Alumina & Silica Gel</span>
+                <span class="product-tag">Zeolites & Molecular Sieves</span>
+                <span class="product-tag">Corrosion Inhibitors</span>
+                <span class="product-tag">Advanced Composites</span>
+                <span class="product-tag">High-Performance Coatings</span>
+                <span class="product-tag">Industrial Lubricants & Additives</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-category" onclick="toggleCategory(this)">
+            <div class="product-cat-header">
+              <span class="product-cat-num">04</span>
+              <div class="product-cat-title">
+                <h3>Process & Infrastructure Components</h3>
+                <p>Critical components for industrial process and facility infrastructure</p>
+              </div>
+              <span class="product-cat-arrow">→</span>
+            </div>
+            <div class="product-cat-body">
+              <div class="product-tags">
+                <span class="product-tag">Industrial Valves & Actuators</span>
+                <span class="product-tag">Instrumentation & Control Systems</span>
+                <span class="product-tag">Structural Steel & Fabrications</span>
+                <span class="product-tag">Process Piping Systems</span>
+                <span class="product-tag">Electrical Switchgear & Panels</span>
+                <span class="product-tag">Insulation Systems</span>
+                <span class="product-tag">Safety & Relief Equipment</span>
+                <span class="product-tag">Refractory Materials</span>
+                <span class="product-tag">Compressor Unit</span>
+                <span class="product-tag">Flow Meters</span>
+                <span class="product-tag">Pre-Fabricated Containers</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="products-note atmospheric-gradient">
+        <div class="container" style="text-align:center">
+          <div class="label" style="justify-content:center">Custom Requirements</div>
+          <h3>Don't See Your Category?<br><em>That's exactly when you should call us.</em></h3>
+          <p>Our sourcing capability extends beyond these categories. Tell us your requirement and we'll do the rest.
+          </p>
+          <button class="btn-primary" onclick="showPage('contact')">Discuss Your Requirement <span
+              class="btn-arrow">→</span></button>
+        </div>
+      </div>
+
     </div>
 
-    <section class="products-grid light-atmospheric-gradient">
-      <div class="container">
-        <div class="products-intro">
-          <div class="label" style="justify-content:center">Our Sourcing Scope</div>
-          <h2>Specialized. Niche. <em>Margin-Accretive.</em></h2>
-          <p>Saint Sword focuses exclusively on industrial categories where specialized knowledge, supplier
-            relationships, and sourcing discipline create measurable value.</p>
-        </div>
-
-        <div class="product-category open" onclick="toggleCategory(this)">
-          <div class="product-cat-header">
-            <span class="product-cat-num">01</span>
-            <div class="product-cat-title">
-              <h3>Industrial Equipment & Machinery</h3>
-              <p>Heavy-duty processing and manufacturing equipment</p>
-            </div>
-            <span class="product-cat-arrow">→</span>
-          </div>
-          <div class="product-cat-body">
-            <div class="product-tags">
-              <span class="product-tag">Crushing & Grinding Equipment</span>
-              <span class="product-tag">Conveyors & Material Handling</span>
-              <span class="product-tag">Industrial Pumps & Compressors</span>
-              <span class="product-tag">Heat Exchangers</span>
-              <span class="product-tag">Mixing & Blending Systems</span>
-              <span class="product-tag">Filtration Equipment</span>
-              <span class="product-tag">Reactor Vessels</span>
-              <span class="product-tag">Industrial Dryers</span>
-              <span class="product-tag">Boilers & Pressure Vessels</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-category" onclick="toggleCategory(this)">
-          <div class="product-cat-header">
-            <span class="product-cat-num">02</span>
-            <div class="product-cat-title">
-              <h3>Emission Control & Environmental Systems</h3>
-              <p>Advanced environmental compliance and air quality management</p>
-            </div>
-            <span class="product-cat-arrow">→</span>
-          </div>
-          <div class="product-cat-body">
-            <div class="product-tags">
-              <span class="product-tag">Electrostatic Precipitators (ESP)</span>
-              <span class="product-tag">Bag Filter Systems</span>
-              <span class="product-tag">Wet Scrubbers</span>
-              <span class="product-tag">Selective Catalytic Reduction (SCR)</span>
-              <span class="product-tag">Flue Gas Desulfurization</span>
-              <span class="product-tag">De-NOx Systems</span>
-              <span class="product-tag">Industrial Cyclones</span>
-              <span class="product-tag">Activated Carbon Systems</span>
-              <span class="product-tag">Catalytic Oxidise</span>
-              <span class="product-tag">Flare System</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-category" onclick="toggleCategory(this)">
-          <div class="product-cat-header">
-            <span class="product-cat-num">03</span>
-            <div class="product-cat-title">
-              <h3>Specialty Chemicals & Materials</h3>
-              <p>High-performance industrial chemicals, composites, and advanced materials</p>
-            </div>
-            <span class="product-cat-arrow">→</span>
-          </div>
-          <div class="product-cat-body">
-            <div class="product-tags">
-              <span class="product-tag">Industrial Catalysts</span>
-              <span class="product-tag">Specialty Polymers & Resins</span>
-              <span class="product-tag">Activated Alumina & Silica Gel</span>
-              <span class="product-tag">Zeolites & Molecular Sieves</span>
-              <span class="product-tag">Corrosion Inhibitors</span>
-              <span class="product-tag">Advanced Composites</span>
-              <span class="product-tag">High-Performance Coatings</span>
-              <span class="product-tag">Industrial Lubricants & Additives</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-category" onclick="toggleCategory(this)">
-          <div class="product-cat-header">
-            <span class="product-cat-num">04</span>
-            <div class="product-cat-title">
-              <h3>Process & Infrastructure Components</h3>
-              <p>Critical components for industrial process and facility infrastructure</p>
-            </div>
-            <span class="product-cat-arrow">→</span>
-          </div>
-          <div class="product-cat-body">
-            <div class="product-tags">
-              <span class="product-tag">Industrial Valves & Actuators</span>
-              <span class="product-tag">Instrumentation & Control Systems</span>
-              <span class="product-tag">Structural Steel & Fabrications</span>
-              <span class="product-tag">Process Piping Systems</span>
-              <span class="product-tag">Electrical Switchgear & Panels</span>
-              <span class="product-tag">Insulation Systems</span>
-              <span class="product-tag">Safety & Relief Equipment</span>
-              <span class="product-tag">Refractory Materials</span>
-              <span class="product-tag">Compressor Unit</span>
-              <span class="product-tag">Flow Meters</span>
-              <span class="product-tag">Pre-Fabricated Containers</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="products-note atmospheric-gradient">
-      <div class="container" style="text-align:center">
-        <div class="label" style="justify-content:center">Custom Requirements</div>
-        <h3>Don't See Your Category?<br><em>That's exactly when you should call us.</em></h3>
-        <p>Our sourcing capability extends beyond these categories. Tell us your requirement and we'll do the rest.</p>
-        <button class="btn-primary" onclick="showPage('contact')">Discuss Your Requirement <span class="btn-arrow">→</span></button>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        CONTACT PAGE
   ════════════════════════════════════════ -->
-  <div class="page" id="page-contact">
-    <div class="contact-page atmospheric-gradient">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="label">Get in Touch</div>
-          <h1>Let's Build <em>Together.</em></h1>
-          <p>Every partnership starts with a conversation. Whether you have a specific requirement in mind or wish to
-            explore with Saint Sword, we are here to support.</p>
-          <div class="contact-details">
-            <div class="contact-detail">
-              <div class="detail-icon">✉</div>
-              <div class="detail-text">
-                <h5>Email</h5>
-                <p>info@saintsword.in</p>
+    <div class="page" id="page-contact">
+      <div class="contact-page atmospheric-gradient">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="label">Get in Touch</div>
+            <h1>Let's Build <em>Together.</em></h1>
+            <p>Every partnership starts with a conversation. Whether you have a specific requirement in mind or wish to
+              explore with Saint Sword, we are here to support.</p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <div class="detail-icon">
+                  <svg viewBox="0 0 24 24">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <div class="detail-text">
+                  <h5>Email</h5>
+                  <p>info@saintsword.in</p>
+                </div>
               </div>
-            </div>
-            <div class="contact-detail">
-              <div class="detail-icon">📞</div>
-              <div class="detail-text">
-                <h5>Phone</h5>
-                <p>+91 99204 34321</p>
+              <div class="contact-detail">
+                <div class="detail-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="detail-text">
+                  <h5>Phone</h5>
+                  <p>+91 99204 34321</p>
+                </div>
               </div>
-            </div>
-            <div class="contact-detail">
-              <div class="detail-icon">📍</div>
-              <div class="detail-text">
-                <h5>Registered Office</h5>
-                <p>Mumbai, India (Operating Globally)</p>
+              <div class="contact-detail">
+                <div class="detail-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="detail-text">
+                  <h5>Registered Office</h5>
+                  <p>Mumbai, India (Operating Globally)</p>
+                </div>
               </div>
-            </div>
-            <div class="contact-detail">
-              <div class="detail-icon">⏱</div>
-              <div class="detail-text">
-                <h5>Response Time</h5>
-                <p>We respond to all enquiries within 24 business hours</p>
+              <div class="contact-detail">
+                <div class="detail-icon">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div class="detail-text">
+                  <h5>Response Time</h5>
+                  <p>We respond to all enquiries within 24 business hours</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="contact-form-wrap">
-          <h3>Send an Enquiry</h3>
-          <form id="contactForm" action="https://formspree.io/f/xykolwqo" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label>Your Name <span style="color: var(--gold)">*</span></label>
-                <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Full name" required>
+          <div class="contact-form-wrap">
+            <h3>Send an Enquiry</h3>
+            <form id="contactForm" action="https://formspree.io/f/xykolwqo" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Your Name <span style="color: var(--gold)">*</span></label>
+                  <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Full name" required>
+                </div>
+                <div class="form-group">
+                  <label>Company <span style="color: var(--gold)">*</span></label>
+                  <input type="text" id="f-company" name="company" autocomplete="organization"
+                    placeholder="Company name" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Email Address <span style="color: var(--gold)">*</span></label>
+                  <input type="email" id="f-email" name="email" autocomplete="email" placeholder="you@company.com"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label>Contact Number <span style="color: var(--gold)">*</span></label>
+                  <input type="tel" id="f-whatsapp" name="whatsapp" autocomplete="tel"
+                    placeholder="+ Country Code XXXXX XXXXX" required>
+                </div>
               </div>
               <div class="form-group">
-                <label>Company <span style="color: var(--gold)">*</span></label>
-                <input type="text" id="f-company" name="company" autocomplete="organization" placeholder="Company name"
-                  required>
+                <label>Enquiry Type <span style="color: var(--gold)">*</span></label>
+                <select id="f-type" name="type" required>
+                  <option value="">Select an option</option>
+                  <option>Industrial Sourcing Requirement</option>
+                  <option>Freight & Logistics</option>
+                  <option>Financing & Commercial Structuring</option>
+                  <option>India Market Entry (Global Manufacturers)</option>
+                  <option>Partnership Exploration</option>
+                  <option>Other</option>
+                </select>
               </div>
-            </div>
-            <div class="form-row">
               <div class="form-group">
-                <label>Email Address <span style="color: var(--gold)">*</span></label>
-                <input type="email" id="f-email" name="email" autocomplete="email" placeholder="you@company.com"
-                  required>
+                <label>Your Requirement <span style="color: var(--gold)">*</span></label>
+                <textarea id="f-message" name="message" required
+                  placeholder="Describe your requirement, product category, estimated volumes, and any other relevant details..."></textarea>
               </div>
-              <div class="form-group">
-                <label>Contact Number <span style="color: var(--gold)">*</span></label>
-                <input type="tel" id="f-whatsapp" name="whatsapp" autocomplete="tel"
-                  placeholder="+ Country Code XXXXX XXXXX" required>
-              </div>
+              <button type="submit" class="form-submit">Send Enquiry <span class="btn-arrow">→</span></button>
+            </form>
+            <div class="form-success" id="formSuccess">
+              <h4>Message Received.</h4>
+              <p>Thank you for reaching out to Saint Sword. We'll review your enquiry and respond within 24 business
+                hours.</p>
             </div>
-            <div class="form-group">
-              <label>Enquiry Type <span style="color: var(--gold)">*</span></label>
-              <select id="f-type" name="type" required>
-                <option value="">Select an option</option>
-                <option>Industrial Sourcing Requirement</option>
-                <option>Freight & Logistics</option>
-                <option>Financing & Commercial Structuring</option>
-                <option>India Market Entry (Global Manufacturers)</option>
-                <option>Partnership Exploration</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Your Requirement <span style="color: var(--gold)">*</span></label>
-              <textarea id="f-message" name="message" required
-                placeholder="Describe your requirement, product category, estimated volumes, and any other relevant details..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Enquiry <span class="btn-arrow">→</span></button>
-          </form>
-          <div class="form-success" id="formSuccess">
-            <h4>Message Received.</h4>
-            <p>Thank you for reaching out to Saint Sword. We'll review your enquiry and respond within 24 business
-              hours.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
   </main>
 
@@ -819,12 +868,14 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <span class="footer-logo" onclick="showPage('home')" role="button" aria-label="Saint Sword Home" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); event.preventDefault(); }">
+        <span class="footer-logo" onclick="showPage('home')" role="button" aria-label="Saint Sword Home" tabindex="0"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); event.preventDefault(); }">
           <div class="nav-logo-mark" style="width: 24px; height: 24px; margin-bottom: 0;">
             <img src="assets/images/logo.png" alt="Logo" width="24" height="24" decoding="async">
           </div>
           <div class="nav-logo-text" style="height: 22px;">
-            <img src="assets/images/logo-text.png" alt="SAINT SWORD" width="120" height="22" decoding="async" style="height: 100%; width: auto;">
+            <img src="assets/images/logo-text.png" alt="SAINT SWORD" width="120" height="22" decoding="async"
+              style="height: 100%; width: auto;">
           </div>
         </span>
         <p>Global industrial sourcing, strategic trade execution, and market access for India's growing industrial
