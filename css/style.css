@@ -121,8 +121,8 @@ nav {
 }
 
 .nav-logo-mark {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +142,7 @@ nav {
 }
 
 .nav-logo-text {
-  height: 32px;
+  height: 35px;
   display: flex;
   align-items: center;
 }
@@ -3306,12 +3306,12 @@ footer {
   }
 
   .nav-logo-mark {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
 
   .nav-logo-text {
-    height: 24px;
+    height: 26px;
   }
 
   /* ─ Hero ─ */
