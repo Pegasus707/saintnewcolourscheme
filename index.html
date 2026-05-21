@@ -19,10 +19,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Preload critical font file -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://saintsword.in/">
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css?v=3">
@@ -32,7 +30,7 @@
 
   <!-- ═══ NAVIGATION ═══ -->
   <nav>
-    <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo" onclick="showPage('home')" role="button" aria-label="Saint Sword Home" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); event.preventDefault(); }">
       <div class="nav-logo-mark">
         <img src="assets/images/logo.png" alt="Saint Sword Logo" width="32" height="32" decoding="async">
       </div>
@@ -48,13 +46,13 @@
       <li><a href="#" onclick="showPage('contact', event)" id="nav-contact">Contact</a></li>
     </ul>
     <button class="nav-cta" onclick="showPage('contact')">Get in Touch</button>
-    <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <div class="hamburger" onclick="toggleMobile()" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { toggleMobile(); event.preventDefault(); }">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-logo" onclick="showPage('home');toggleMobile()"
+    <div class="mobile-logo" onclick="showPage('home');toggleMobile()" role="button" aria-label="Saint Sword Home" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); toggleMobile(); event.preventDefault(); }"
       style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
       <div class="nav-logo-mark" style="width: 40px; height: 40px;">
         <img src="assets/images/logo.png" alt="Logo" width="40" height="40" decoding="async">
@@ -74,6 +72,7 @@
   <!-- ═══════════════════════════════════════
        HOME PAGE
   ════════════════════════════════════════ -->
+  <main id="main-content">
   <div class="page active" id="page-home">
 
     <!-- Hero -->
@@ -814,16 +813,18 @@
     </div>
   </div>
 
+  </main>
+
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <span class="footer-logo" onclick="showPage('home')">
+        <span class="footer-logo" onclick="showPage('home')" role="button" aria-label="Saint Sword Home" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { showPage('home'); event.preventDefault(); }">
           <div class="nav-logo-mark" style="width: 24px; height: 24px; margin-bottom: 0;">
-            <img src="assets/images/logo.png" alt="Logo">
+            <img src="assets/images/logo.png" alt="Logo" width="24" height="24" decoding="async">
           </div>
           <div class="nav-logo-text" style="height: 22px;">
-            <img src="assets/images/logo-text.png" alt="SAINT SWORD" style="height: 100%; width: auto;">
+            <img src="assets/images/logo-text.png" alt="SAINT SWORD" width="120" height="22" decoding="async" style="height: 100%; width: auto;">
           </div>
         </span>
         <p>Global industrial sourcing, strategic trade execution, and market access for India's growing industrial
@@ -866,7 +867,7 @@
     </div>
   </footer>
   <!-- Scripts -->
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 
 </html>

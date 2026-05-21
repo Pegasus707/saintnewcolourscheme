@@ -1603,12 +1603,6 @@ body::before {
   line-height: 1.8;
 }
 
-.product-category {
-  border: 1px solid var(--border-light);
-  margin-bottom: 2px;
-  overflow: hidden;
-  transition: border-color 0.3s;
-}
 
 .product-category:hover {
   border-color: var(--border);
@@ -1660,23 +1654,37 @@ body::before {
 .product-cat-arrow {
   color: var(--gold);
   font-size: 1.2rem;
-  transition: transform 0.3s;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
 }
 
 .product-category.open .product-cat-arrow {
   transform: rotate(90deg);
+  color: var(--gold-light);
 }
 
 .product-cat-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
   border-top: 1px solid transparent;
+  will-change: max-height; /* GPU optimization for fast layout calculations */
 }
 
 .product-category.open .product-cat-body {
-  max-height: 500px;
   border-top-color: var(--border-light);
+  background-color: var(--white); /* #222D29 - Dark green-black from the palette */
+}
+
+.product-category {
+  border: 1px solid var(--border-light);
+  margin-bottom: 2px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-category.open {
+  border-color: var(--gold); /* Highlight open card border */
+  box-shadow: 0 10px 25px rgba(34, 45, 41, 0.05); /* Professional elevation */
 }
 
 .product-tags {
@@ -1692,15 +1700,20 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(34, 45, 41, 0.6);
-  border: 1px solid var(--border-light);
+  color: #FFFFFF; /* High contrast white from the palette */
+  border: 1px solid rgba(105, 143, 135, 0.35); /* #698F87 (light sage) at 35% opacity */
+  background-color: rgba(62, 95, 88, 0.12); /* #3E5F58 (medium green) at 12% opacity */
   padding: 8px 16px;
-  transition: border-color 0.3s, color 0.3s;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .product-tag:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  background-color: var(--gold-light); /* #698F87 - Light sage green from the palette */
+  border-color: var(--gold-light);
+  color: var(--white); /* #222D29 - Dark green-black from the palette */
+  transform: translateY(-2px); /* Pop out effect */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 .products-note {
