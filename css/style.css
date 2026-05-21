@@ -659,7 +659,11 @@ body::before {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: 700;
-  color: var(--gold);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   line-height: 1;
   display: block;
 }
@@ -734,7 +738,11 @@ body::before {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.8rem;
   font-weight: 700;
-  color: rgba(62, 95, 88, 0.12);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   line-height: 1;
   margin-bottom: 1.5rem;
   display: block;
@@ -968,9 +976,9 @@ body::before {
 }
 
 .process-step:hover .step-num {
-  background: var(--gold);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: #FFFFFF;
-  border-color: var(--gold);
+  border-color: var(--gold-light);
 }
 
 .process-step h4 {
@@ -1491,7 +1499,11 @@ body::before {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
-  color: rgba(62, 95, 88, 0.1);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   line-height: 1;
   display: block;
   margin-bottom: 1rem;
@@ -1635,7 +1647,11 @@ body::before {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
-  color: rgba(62, 95, 88, 0.25);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   line-height: 1;
 }
 
@@ -2367,7 +2383,11 @@ footer {
 }
 
 .atmospheric-gradient .pillar-num {
-  color: rgba(255, 255, 255, 0.05) !important;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-pale)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
 }
 
 .atmospheric-gradient .pillar-icon {
@@ -2380,8 +2400,8 @@ footer {
 }
 
 .atmospheric-gradient .process-step:hover .step-num {
-  background: #3E5F58 !important;
-  border-color: #698F87 !important;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-pale)) !important;
+  border-color: var(--gold-pale) !important;
   color: #FFFFFF !important;
   box-shadow: 0 0 20px rgba(62, 95, 88, 0.4);
 }
@@ -2407,7 +2427,11 @@ footer {
 }
 
 .atmospheric-gradient .product-cat-num {
-  color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-pale));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .atmospheric-gradient .product-tag {
