@@ -1669,12 +1669,14 @@ body::before {
   overflow: hidden;
   transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
   border-top: 1px solid transparent;
-  will-change: max-height; /* GPU optimization for fast layout calculations */
+  will-change: max-height;
+  /* GPU optimization for fast layout calculations */
 }
 
 .product-category.open .product-cat-body {
   border-top-color: var(--border-light);
-  background-color: var(--white); /* #222D29 - Dark green-black from the palette */
+  background-color: var(--white);
+  /* #222D29 - Dark green-black from the palette */
 }
 
 .product-category {
@@ -1685,8 +1687,10 @@ body::before {
 }
 
 .product-category.open {
-  border-color: var(--gold); /* Highlight open card border */
-  box-shadow: 0 10px 25px rgba(34, 45, 41, 0.05); /* Professional elevation */
+  border-color: var(--gold);
+  /* Highlight open card border */
+  box-shadow: 0 10px 25px rgba(34, 45, 41, 0.05);
+  /* Professional elevation */
 }
 
 .product-tags {
@@ -1702,19 +1706,25 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #FFFFFF; /* High contrast white from the palette */
-  border: 1px solid rgba(105, 143, 135, 0.35); /* #698F87 (light sage) at 35% opacity */
-  background-color: rgba(62, 95, 88, 0.12); /* #3E5F58 (medium green) at 12% opacity */
+  color: #FFFFFF;
+  /* High contrast white from the palette */
+  border: 1px solid rgba(105, 143, 135, 0.35);
+  /* #698F87 (light sage) at 35% opacity */
+  background-color: rgba(62, 95, 88, 0.12);
+  /* #3E5F58 (medium green) at 12% opacity */
   padding: 8px 16px;
   border-radius: 4px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .product-tag:hover {
-  background-color: var(--gold-light); /* #698F87 - Light sage green from the palette */
+  background-color: var(--gold-light);
+  /* #698F87 - Light sage green from the palette */
   border-color: var(--gold-light);
-  color: var(--white); /* #222D29 - Dark green-black from the palette */
-  transform: translateY(-2px); /* Pop out effect */
+  color: var(--white);
+  /* #222D29 - Dark green-black from the palette */
+  transform: translateY(-2px);
+  /* Pop out effect */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -2844,11 +2854,6 @@ footer {
 /* ─── MEDIA QUERY OVERRIDES FOR RESPONSIVE GRIDS ─── */
 
 @media (max-width: 1024px) {
-  .bridge-items {
-    grid-template-columns: 1fr;
-    max-width: 600px;
-  }
-
   .why-grid {
     grid-template-columns: 1fr;
     gap: 3.5rem;
@@ -2867,6 +2872,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .bridge-items {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
   .partner-cards {
     grid-template-columns: 1fr;
     gap: 1.5rem;
