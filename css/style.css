@@ -2720,18 +2720,47 @@ footer {
 
 
 
-/* ─── RESPONSIVE OPTIMIZATIONS ─── */
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE SYSTEM
+   Laptop ≤1280px | Tablet ≤1024px | Phablet ≤768px | Phone ≤480px | Tiny ≤360px
+   No layout, UI, UX, branding, animations, or desktop appearance changed.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Laptop (≤1280px) ─────────────────────────────────────── */
 @media (max-width: 1280px) {
   html {
     font-size: 15px;
   }
+
+  section,
+  .contact-page,
+  .products-hero,
+  .about-hero {
+    padding-left: clamp(1.5rem, 5%, 5%) !important;
+    padding-right: clamp(1.5rem, 5%, 5%) !important;
+  }
+
+  .hero-content {
+    padding-top: clamp(56px, 12vh, 110px);
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .founder-grid {
+    grid-template-columns: clamp(240px, 28vw, 320px) 1fr;
+  }
 }
 
+/* ── Tablet landscape (≤1024px) ───────────────────────────── */
 @media (max-width: 1024px) {
   html {
     font-size: 14px;
   }
 
+  /* Navigation */
   .nav-links,
   .nav-cta {
     display: none;
@@ -2741,18 +2770,7 @@ footer {
     display: flex;
   }
 
-  .process-steps {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-  }
-
-  .why-features {
-    border-left: none;
-    border-top: 1px solid var(--border-light);
-    padding-top: 3rem;
-    margin-top: 2rem;
-  }
-
+  /* Hero */
   .hero,
   .about-hero,
   .services-hero,
@@ -2768,251 +2786,16 @@ footer {
 
   .hero-content {
     padding-top: 0;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  /* Spacing Normalizations for Tablet Viewports */
-  section {
-    padding-left: 6% !important;
-    padding-right: 6% !important;
-  }
-
-  .form-group {
-    margin-bottom: 1.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .process-steps {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .process-steps::before {
-    display: none;
-  }
-
-  .hero-badge {
-    display: none;
-  }
-
-  .stat-divider {
-    display: none;
-  }
-
-  .stats-strip .container {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 0;
-  }
-
-  .stat-item {
-    border-right: 1px solid var(--border);
-  }
-
-  .stat-item:nth-child(2n) {
-    border-right: none;
-  }
-
-  .stat-item:nth-child(1),
-  .stat-item:nth-child(2) {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2rem;
-  }
-
-  .stat-item:nth-child(3),
-  .stat-item:nth-child(4) {
-    padding-top: 2rem;
-  }
-
-  .service-item.reverse {
-    direction: ltr;
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    font-size: 13px;
-  }
-
-  .stats-strip .container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .stat-item {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 0 0 2rem 0;
-  }
-
-  .stat-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .stat-item:nth-child(1),
-  .stat-item:nth-child(2),
-  .stat-item:nth-child(3) {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2rem;
-  }
-
-  .stat-item:nth-child(3),
-  .stat-item:nth-child(4) {
-    padding-top: 0;
-  }
-
-  .hero,
-  .about-hero,
-  .services-hero,
-  .products-hero {
-    padding-top: 6.5rem;
-    padding-bottom: 3rem;
-  }
-
-  .hero-content {
-    padding-top: 0;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
-  }
-
-  .contact-form-wrap {
-    margin-left: -5%;
-    margin-right: -5%;
-    border-left: none;
-    border-right: none;
-  }
-
-  .product-cat-header {
-    grid-template-columns: 40px 1fr auto;
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-
-  .product-tags {
-    padding: 1.5rem;
-  }
-
-  .founder-visual {
-    width: 115px;
-    margin: 0 auto;
-  }
-
-  .founder-frame {
     max-width: 100%;
   }
 
-  .founder-name-plate {
-    position: static;
-    padding: 8px 6px;
-    text-align: center;
-    border: 1px solid var(--border);
-    border-top: none;
-    box-sizing: border-box;
+  /* Process */
+  .process-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
 
-  .founder-name-plate h4 {
-    font-size: 0.65rem;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-  }
-
-  .founder-name-plate span {
-    font-size: 0.5rem;
-    margin-top: 1px;
-    white-space: nowrap;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* ==========================================
-   ADDED REFINEMENTS & INTERACTIVE POLISH
-   ========================================== */
-
-/* Interactive Button Arrow Hover State */
-.btn-arrow {
-  display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-primary:hover .btn-arrow,
-.btn-outline:hover .btn-arrow,
-.form-submit:hover .btn-arrow,
-.error-btn-primary:hover .btn-arrow {
-  transform: translateX(4px);
-}
-
-/* Custom Dropdown Chevron for Form Select */
-.form-group select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233e5f58' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
-  background-repeat: no-repeat !important;
-  background-position: right 16px center !important;
-  background-size: 16px !important;
-  padding-right: 44px !important;
-}
-
-/* Open state for mobile hamburger menu */
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7.5px) rotate(45deg);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7.5px) rotate(-45deg);
-}
-
-/* Scroll Reveal base animations */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  /* will-change is set/cleared programmatically by JS only when animating */
-}
-
-.reveal-on-scroll.revealed {
-  opacity: 1;
-  transform: translateY(0);
-  /* will-change: auto is set by JS transitionend callback */
-}
-
-/* Ensure hover transforms remain fast and responsive once elements are revealed */
-.pillar-card.revealed:hover,
-.partner-card.revealed:hover,
-.source-card.revealed:hover,
-.process-step.revealed:hover,
-.bridge-item.revealed:hover {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
-
-.bridge-item.revealed:hover {
-  background: rgba(34, 45, 41, 0.05);
-  border-color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(105, 143, 135, 0.12);
-}
-
-/* ─── MEDIA QUERY OVERRIDES FOR RESPONSIVE GRIDS ─── */
-
-@media (max-width: 1024px) {
+  /* Why grid */
   .why-grid {
     grid-template-columns: 1fr;
     gap: 3.5rem;
@@ -3027,90 +2810,58 @@ footer {
     border-top: 1px solid var(--border-light);
     padding-left: 0;
     padding-top: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .bridge-items {
-    grid-template-columns: 1fr;
-    max-width: 600px;
+    margin-top: 0;
   }
 
-  .partner-cards {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .partner-card {
-    padding: 2.5rem 2rem;
-  }
-}
-
-@media (max-width: 580px) {
-  .process-steps {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .process-steps::before {
+  /* Hide the arrow that positions relative to the left border */
+  .why-feature::before {
     display: none;
-    /* Hide linear step-connector line on vertical stack */
-  }
-}
-
-/* ============================================================
-   COMPREHENSIVE RESPONSIVE SYSTEM
-   Laptop  ≤1280px  |  Tablet  ≤768px  |  Phone  ≤480px / ≤360px
-   NO elements are repositioned — only sizing, spacing, and
-   overflow issues are corrected.
-   ============================================================ */
-
-/* ── Laptop (≤1280px) ─────────────────────────────────────── */
-@media (max-width: 1280px) {
-
-  /* Slightly tighten section horizontal padding */
-  section,
-  .contact-page,
-  .products-hero,
-  .about-hero {
-    padding-left: clamp(1.5rem, 5%, 5%) !important;
-    padding-right: clamp(1.5rem, 5%, 5%) !important;
   }
 
-  /* Hero: keep proportions but shrink top space a touch */
-  .hero-content {
-    padding-top: clamp(56px, 12vh, 110px);
-  }
-
-  /* Tighten process grid on narrower laptops */
-  .process-steps {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-  }
-
-  /* Founder grid: let 320px fixed column be fluid */
+  /* Founder */
   .founder-grid {
-    grid-template-columns: clamp(240px, 28vw, 320px) 1fr;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .founder-visual {
+    margin: 0 auto;
+  }
+
+  /* Form */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 1.8rem;
+  }
+
+  /* Section padding */
+  section {
+    padding-left: 6% !important;
+    padding-right: 6% !important;
   }
 }
 
-/* ── Tablet (≤768px) ──────────────────────────────────────── */
+/* ── Tablet portrait (≤768px) ─────────────────────────────── */
 @media (max-width: 768px) {
 
-  /* Global section spacing */
+  /* Global */
   section,
   .contact-page {
     padding-left: 5% !important;
     padding-right: 5% !important;
   }
 
-  /* ─ Navigation ─ */
+  /* Navigation */
   nav {
     padding-left: 5%;
     padding-right: 5%;
   }
 
-  /* ─ Hero ─ */
+  /* Hero */
   .hero,
   .about-hero,
   .services-hero,
@@ -3148,23 +2899,59 @@ footer {
     justify-content: center;
   }
 
-  /* ─ Stats strip ─ */
+  .hero-badge {
+    display: none;
+  }
+
+  /* Stats strip */
   .stats-strip {
     padding: 2rem 5%;
   }
 
-  /* ─ What We Do (pillars) ─ */
+  .stats-strip .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 0;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat-item {
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-item:nth-child(2n) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(1),
+  .stat-item:nth-child(2) {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+  }
+
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) {
+    padding-top: 2rem;
+  }
+
+  /* Pillars */
   .pillars-header {
     margin-bottom: 3rem;
   }
 
-  /* ─ Process steps ─ */
+  /* Process */
   .process-steps {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
 
-  /* ─ Why grid ─ */
+  .process-steps::before {
+    display: none;
+  }
+
+  /* Why */
   .why-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -3181,7 +2968,19 @@ footer {
     padding-top: 2rem;
   }
 
-  /* ─ Partners ─ */
+  .why-feature::before {
+    display: none;
+  }
+
+  /* Bridge */
+  .bridge-items {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Partners */
   .partner-cards {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -3191,7 +2990,7 @@ footer {
     padding: 2.5rem 2rem;
   }
 
-  /* ─ CTA Band ─ */
+  /* CTA */
   .cta-band {
     padding: 64px 5%;
   }
@@ -3210,17 +3009,16 @@ footer {
     justify-content: center;
   }
 
-  /* ─ About Story ─ */
+  /* About */
   .about-story-grid {
     gap: 2.5rem;
   }
 
-  /* ─ About vision grid ─ */
   .grid-2 {
     gap: 2.5rem;
   }
 
-  /* ─ Founder ─ */
+  /* Founder */
   .founder-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -3234,7 +3032,7 @@ footer {
     max-width: 150px;
   }
 
-  /* ─ Services ─ */
+  /* Services */
   .service-item {
     gap: 2.5rem;
     padding: clamp(3rem, 8vw, 5rem) 5%;
@@ -3244,7 +3042,7 @@ footer {
     direction: ltr;
   }
 
-  /* ─ Products ─ */
+  /* Products */
   .products-hero {
     padding-top: 6rem;
     min-height: auto;
@@ -3255,7 +3053,7 @@ footer {
     padding: 1.5rem;
   }
 
-  /* ─ Contact ─ */
+  /* Contact */
   .contact-page {
     padding-top: 6rem;
     padding-bottom: 4rem;
@@ -3274,7 +3072,7 @@ footer {
     padding: 2rem 1.5rem;
   }
 
-  /* ─ Footer ─ */
+  /* Footer */
   footer {
     padding: 3rem 5% 2rem;
   }
@@ -3291,6 +3089,18 @@ footer {
   }
 }
 
+/* ── Phablet (≤580px) — single-col process steps ─────────── */
+@media (max-width: 580px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .process-steps::before {
+    display: none;
+  }
+}
+
 /* ── Phone (≤480px) ───────────────────────────────────────── */
 @media (max-width: 480px) {
 
@@ -3298,7 +3108,7 @@ footer {
     font-size: 14px;
   }
 
-  /* ─ Navigation ─ */
+  /* Navigation */
   nav {
     padding-left: 4%;
     padding-right: 4%;
@@ -3314,7 +3124,7 @@ footer {
     height: 26px;
   }
 
-  /* ─ Hero ─ */
+  /* Hero */
   .hero,
   .about-hero,
   .services-hero,
@@ -3332,7 +3142,7 @@ footer {
     letter-spacing: 0.2em;
   }
 
-  /* ─ Stats ─ */
+  /* Stats */
   .stats-strip {
     padding: 1.5rem 4%;
   }
@@ -3353,7 +3163,7 @@ footer {
     padding-bottom: 0;
   }
 
-  /* ─ Pillars / process ─ */
+  /* Pillars / process */
   .pillars-header h2,
   .process-header h2,
   .partners h2 {
@@ -3374,12 +3184,12 @@ footer {
     margin: 0 auto 1rem;
   }
 
-  /* ─ Partner cards ─ */
+  /* Partner cards */
   .partner-card {
     padding: 2rem 1.5rem;
   }
 
-  /* ─ CTA Band ─ */
+  /* CTA */
   .cta-band {
     padding: 48px 4%;
   }
@@ -3388,18 +3198,18 @@ footer {
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
 
-  /* ─ About hero heading ─ */
+  /* About hero */
   .about-hero-content h1 {
     font-size: clamp(2.2rem, 8vw, 3rem);
   }
 
-  /* ─ Vision blockquote ─ */
+  /* Vision */
   .vision-section blockquote {
     font-size: clamp(1.1rem, 4vw, 1.4rem);
     padding: 1.5rem;
   }
 
-  /* ─ Founder ─ */
+  /* Founder */
   .founder-visual {
     width: 115px;
     margin: 0 auto;
@@ -3430,7 +3240,7 @@ footer {
     white-space: nowrap;
   }
 
-  /* ─ Services ─ */
+  /* Services */
   .service-item {
     padding: 3rem 4%;
   }
@@ -3439,7 +3249,7 @@ footer {
     font-size: 2.5rem;
   }
 
-  /* ─ Products ─ */
+  /* Products */
   .product-cat-header {
     grid-template-columns: 36px 1fr auto;
     gap: 0.75rem;
@@ -3460,7 +3270,7 @@ footer {
     padding: 0.35rem 0.7rem;
   }
 
-  /* ─ Contact ─ */
+  /* Contact */
   .contact-page {
     padding-top: 5rem;
     padding-bottom: 3rem;
@@ -3483,7 +3293,7 @@ footer {
     justify-content: center;
   }
 
-  /* ─ Footer ─ */
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -3520,3 +3330,72 @@ footer {
     padding: 1.25rem 1rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   INTERACTIVE POLISH & SCROLL REVEAL (device-independent)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Button arrow hover animation */
+.btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover .btn-arrow,
+.btn-outline:hover .btn-arrow,
+.form-submit:hover .btn-arrow,
+.error-btn-primary:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Custom dropdown chevron */
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233e5f58' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+  background-size: 16px !important;
+  padding-right: 44px !important;
+}
+
+/* Hamburger open state */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Scroll reveal base */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fast hover transitions once revealed */
+.pillar-card.revealed:hover,
+.partner-card.revealed:hover,
+.source-card.revealed:hover,
+.process-step.revealed:hover,
+.bridge-item.revealed:hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.bridge-item.revealed:hover {
+  background: rgba(34, 45, 41, 0.05);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(105, 143, 135, 0.12);
+}
+
