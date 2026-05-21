@@ -1455,7 +1455,7 @@ body::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(3rem, 8vw, 5rem);
-  align-items: start;
+  align-items: stretch;
   max-width: 1280px;
   margin: 0 auto;
   padding: clamp(4rem, 10vw, 8rem) 5%;
@@ -1518,16 +1518,17 @@ body::before {
 }
 
 .service-list li::before {
-  content: '—';
+  content: '•';
   color: var(--gold);
   flex-shrink: 0;
-  font-size: 0.7rem;
+  font-size: 1.4rem;
 }
 
 .service-visual {
   background: linear-gradient(135deg, var(--steel), var(--navy));
   border: 1px solid var(--border-light);
-  aspect-ratio: 4/3;
+  /* No fixed aspect-ratio — let it stretch to match the text column height */
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
