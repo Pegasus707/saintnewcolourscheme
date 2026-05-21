@@ -121,8 +121,8 @@ nav {
 }
 
 .nav-logo-mark {
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +142,7 @@ nav {
 }
 
 .nav-logo-text {
-  height: 28px;
+  height: 36px;
   display: flex;
   align-items: center;
 }
@@ -887,6 +887,7 @@ body::before {
   padding: 2.5rem;
   transition: background 0.3s, border-color 0.3s;
   cursor: default;
+  border-radius: 4px;
 }
 
 .source-card:hover {
@@ -1342,7 +1343,7 @@ body::before {
 
 .founder-frame {
   aspect-ratio: 3/4;
-  max-width: 300px;
+  max-width: 220px;
   background: linear-gradient(135deg, var(--steel), var(--navy));
   border: 1px solid var(--border);
   display: flex;
@@ -2590,8 +2591,7 @@ footer {
 /* Glassmorphism for sub-elements in light-atmospheric-gradient */
 .light-atmospheric-gradient .pillar-card,
 .light-atmospheric-gradient .partner-card,
-.light-atmospheric-gradient .product-card,
-.light-atmospheric-gradient .source-card {
+.light-atmospheric-gradient .product-card {
   background: rgba(255, 255, 255, 0.55) !important;
   border: 1px solid rgba(62, 95, 88, 0.12) !important;
   box-shadow: 0 8px 32px rgba(62, 95, 88, 0.04);
@@ -2602,12 +2602,63 @@ footer {
 
 .light-atmospheric-gradient .pillar-card:hover,
 .light-atmospheric-gradient .partner-card:hover,
-.light-atmospheric-gradient .product-card:hover,
-.light-atmospheric-gradient .source-card:hover {
+.light-atmospheric-gradient .product-card:hover {
   background: rgba(255, 255, 255, 0.85) !important;
   border-color: rgba(62, 95, 88, 0.35) !important;
   box-shadow: 0 20px 48px rgba(62, 95, 88, 0.08), 0 0 16px rgba(105, 143, 135, 0.15);
   transform: translateY(-5px);
+}
+
+/* Custom dark green gradient cards for What We Source section */
+.light-atmospheric-gradient .source-card {
+  background: linear-gradient(135deg, #1C2825, #3E5F58) !important;
+  border: 1px solid rgba(105, 143, 135, 0.25) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 4px;
+}
+
+.light-atmospheric-gradient .source-card:hover {
+  background: linear-gradient(135deg, #243531, #4D756C) !important;
+  border-color: rgba(105, 143, 135, 0.45) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25), 0 0 16px rgba(105, 143, 135, 0.2);
+  transform: translateY(-5px);
+}
+
+.source-card h3 {
+  color: #FFFFFF !important;
+}
+
+.source-card p {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Custom dark green gradient cards for The India Advantage section */
+.light-atmospheric-gradient .bridge-item {
+  background: linear-gradient(135deg, #1C2825, #3E5F58) !important;
+  border: 1px solid rgba(105, 143, 135, 0.25) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.light-atmospheric-gradient .bridge-item:hover {
+  background: linear-gradient(135deg, #243531, #4D756C) !important;
+  border-color: rgba(105, 143, 135, 0.45) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25), 0 0 16px rgba(105, 143, 135, 0.2);
+  transform: translateY(-5px) !important;
+}
+
+.bridge-item p,
+.bridge-item p strong {
+  color: #FFFFFF !important;
+}
+
+.bridge-item-icon {
+  color: var(--gold-light) !important;
 }
 
 .service-block.light-atmospheric-gradient {
@@ -2803,7 +2854,7 @@ footer {
   }
 
   .founder-frame {
-    max-width: 130px;
+    max-width: 95px;
   }
 
   .founder-name-plate {
@@ -3122,7 +3173,7 @@ footer {
   }
 
   .founder-frame {
-    max-width: 260px;
+    max-width: 170px;
   }
 
   /* ─ Services ─ */
@@ -3197,12 +3248,12 @@ footer {
   }
 
   .nav-logo-mark {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
   }
 
   .nav-logo-text {
-    height: 22px;
+    height: 26px;
   }
 
   /* ─ Hero ─ */
@@ -3292,7 +3343,7 @@ footer {
 
   /* ─ Founder ─ */
   .founder-frame {
-    max-width: 130px;
+    max-width: 95px;
   }
 
   .founder-name-plate {
