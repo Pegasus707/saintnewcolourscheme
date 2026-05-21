@@ -2782,6 +2782,25 @@ footer {
     max-width: 130px;
   }
 
+  .founder-name-plate {
+    position: static;
+    padding: 8px 6px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-top: none;
+    box-sizing: border-box;
+  }
+
+  .founder-name-plate h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .founder-name-plate span {
+    font-size: 0.6rem;
+    margin-top: 1px;
+  }
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
@@ -3250,6 +3269,25 @@ footer {
   /* ─ Founder ─ */
   .founder-frame {
     max-width: 130px;
+  }
+
+  .founder-name-plate {
+    position: static;
+    padding: 8px 6px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-top: none;
+    box-sizing: border-box;
+  }
+
+  .founder-name-plate h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .founder-name-plate span {
+    font-size: 0.6rem;
+    margin-top: 1px;
   }
 
   /* ─ Services ─ */
