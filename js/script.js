@@ -24,9 +24,24 @@ function showPage(page, e) {
   // Calculate accordion heights dynamically once Products page becomes visible
   if (page === 'products') {
     requestAnimationFrame(() => {
-      document.querySelectorAll('.product-category.open').forEach(c => {
+      const openCategories = Array.from(document.querySelectorAll('.product-category.open'));
+      const measureBodies = [];
+      
+      // Batch Measure (Read scroll heights)
+      const heights = openCategories.map(c => {
         const body = c.querySelector('.product-cat-body');
-        if (body) body.style.maxHeight = body.scrollHeight + 'px';
+        if (body) {
+          measureBodies.push(body);
+          return body.scrollHeight;
+        }
+        return null;
+      });
+      
+      // Batch Mutate (Write styles)
+      measureBodies.forEach((body, idx) => {
+        if (body && heights[idx] !== null) {
+          body.style.maxHeight = heights[idx] + 'px';
+        }
       });
     });
   }
@@ -378,13 +393,22 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-      document.querySelectorAll('.product-category.open .product-cat-body').forEach(body => {
-        body.style.maxHeight = 'none'; // reset to calculate naturally
-        const newHeight = body.scrollHeight;
-        body.style.maxHeight = newHeight + 'px';
+      const bodies = Array.from(document.querySelectorAll('.product-category.open .product-cat-body'));
+      
+      // Phase 1: Reset all to 'none' (Batch Writes)
+      bodies.forEach(body => {
+        body.style.maxHeight = 'none';
+      });
+      
+      // Phase 2: Measure all scrollHeights (Batch Reads)
+      const heights = bodies.map(body => body.scrollHeight);
+      
+      // Phase 3: Set all heights (Batch Writes)
+      bodies.forEach((body, idx) => {
+        body.style.maxHeight = heights[idx] + 'px';
       });
     }, 150);
-  });
+  }, { passive: true });
 
   // Elements to reveal
   const revealSelectors = [
@@ -403,14 +427,45 @@ document.addEventListener('DOMContentLoaded', () => {
     '.contact-form-container'
   ];
 
-  // Combine selectors and select all matching elements
-  const elementsToReveal = [];
-  revealSelectors.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => {
-      // Add base reveal class
-      el.classList.add('reveal-on-scroll');
-      elementsToReveal.push(el);
+  // Initialize IntersectionObserver
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.08
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    const targetsToReveal = [];
+    
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        // Promote GPU layer
+        target.style.willChange = 'transform, opacity';
+        targetsToReveal.push(target);
+        obs.unobserve(target);
+      }
     });
+
+    if (targetsToReveal.length > 0) {
+      requestAnimationFrame(() => {
+        targetsToReveal.forEach(target => {
+          target.classList.add('revealed');
+          
+          // Clear will-change after transition completes (approx 800ms) to free GPU memory
+          setTimeout(() => {
+            target.style.willChange = 'auto';
+          }, 1000);
+        });
+      });
+    }
+  }, observerOptions);
+
+  // Combine selectors and query the DOM in a single optimized pass
+  const elementsToReveal = document.querySelectorAll(revealSelectors.join(','));
+  elementsToReveal.forEach(el => {
+    el.classList.add('reveal-on-scroll');
+    observer.observe(el);
   });
 
   // Stagger delays setup
@@ -433,33 +488,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-
-  // Initialize IntersectionObserver
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -60px 0px',
-    threshold: 0.08
-  };
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Promote GPU layer just before animating
-        entry.target.style.willChange = 'transform, opacity';
-        // Trigger on next frame to ensure will-change is applied first
-        requestAnimationFrame(() => {
-          entry.target.classList.add('revealed');
-        });
-        // Clear will-change after animation to free GPU memory
-        entry.target.addEventListener('transitionend', () => {
-          entry.target.style.willChange = 'auto';
-        }, { once: true });
-        // Stop observing once revealed
-        obs.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  // Start observing
-  elementsToReveal.forEach(el => observer.observe(el));
 });
