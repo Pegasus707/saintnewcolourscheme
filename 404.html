@@ -55,6 +55,12 @@
       object-fit: contain;
     }
 
+    .error-bg-accent picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
     .error-content {
       position: relative;
       z-index: 2;
@@ -155,6 +161,13 @@
       display: block;
     }
 
+    .error-logo-mark picture,
+    .error-logo-text picture {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+
     .error-logo-text {
       height: 16px;
     }
@@ -172,17 +185,26 @@
   <header class="error-header">
     <a href="index.html" class="error-logo">
       <div class="error-logo-mark">
-        <img src="assets/images/logo.png" alt="Saint Sword Logo" width="28" height="28" decoding="async">
+        <picture>
+          <source srcset="assets/images/logo.webp" type="image/webp">
+          <img src="assets/images/logo.png" alt="Saint Sword Logo" width="28" height="28" decoding="async">
+        </picture>
       </div>
       <div class="error-logo-text">
-        <img src="assets/images/logo-text.png" alt="SAINT SWORD" width="120" height="16" decoding="async">
+        <picture>
+          <source srcset="assets/images/logo-text.webp" type="image/webp">
+          <img src="assets/images/logo-text.png" alt="SAINT SWORD" width="120" height="16" decoding="async">
+        </picture>
       </div>
     </a>
   </header>
 
   <main class="error-container">
     <div class="error-bg-accent">
-      <img src="assets/images/logo.png" alt="Saint Sword Emblem" width="300" height="300" decoding="async">
+      <picture>
+        <source srcset="assets/images/logo.webp" type="image/webp">
+        <img src="assets/images/logo.png" alt="Saint Sword Emblem" width="300" height="300" decoding="async">
+      </picture>
     </div>
 
     <div class="error-content">
