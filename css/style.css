@@ -2281,7 +2281,18 @@ footer {
 }
 
 .atmospheric-gradient>.hero-badge {
-  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  border: 1px solid rgba(105, 143, 135, 0.3) !important;
+  background: rgba(37, 56, 53, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 0 8px 32px rgba(37, 56, 53, 0.15) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.atmospheric-gradient>.hero-badge:hover {
+  transform: scale(1.05) !important;
+  border-color: #DCE7E5 !important;
+  box-shadow: 0 12px 40px rgba(37, 56, 53, 0.3) !important;
 }
 
 .atmospheric-gradient>.hero-badge .hero-badge-num {
@@ -2289,7 +2300,7 @@ footer {
 }
 
 .atmospheric-gradient>.hero-badge .hero-badge-text {
-  color: #698F87 !important;
+  color: #DCE7E5 !important;
 }
 
 
