@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Azonix';
+  src: url('../assets/fonts/Azonix.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --black: #FFFFFF;
   --deep: #F7FAF9;
@@ -32,7 +40,7 @@ html {
 body {
   background: var(--deep);
   color: var(--white);
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   overflow-x: hidden;
   cursor: default;
   /* Prevent horizontal scroll from long words */
@@ -185,7 +193,7 @@ nav {
 }
 
 .nav-links a {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.15em;
@@ -220,7 +228,7 @@ nav {
 }
 
 .nav-cta {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -296,7 +304,7 @@ nav {
 }
 
 .mobile-menu a {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -313,14 +321,14 @@ nav {
 
 /* ─── TYPOGRAPHY HELPERS ─── */
 .display {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
 .label {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.25em;
@@ -353,7 +361,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -380,7 +388,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -519,7 +527,7 @@ body::before {
 }
 
 .hero-eyebrow {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.3em;
@@ -541,7 +549,7 @@ body::before {
 }
 
 .hero h1 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(3.5rem, 7vw, 6.5rem);
   font-weight: 400;
   line-height: 1.0;
@@ -591,7 +599,7 @@ body::before {
 }
 
 .hero-badge-num {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--gold);
@@ -599,7 +607,7 @@ body::before {
 }
 
 .hero-badge-text {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -677,7 +685,7 @@ body::before {
 }
 
 .stat-num {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: 700;
   line-height: 1;
@@ -696,7 +704,7 @@ body::before {
 }
 
 .stat-label {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -722,7 +730,7 @@ body::before {
 }
 
 .pillars-header h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 400;
   color: var(--white);
@@ -767,7 +775,7 @@ body::before {
 }
 
 .pillar-num {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1;
@@ -799,7 +807,7 @@ body::before {
 }
 
 .pillar-card h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -831,7 +839,7 @@ body::before {
 }
 
 .why-content h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2.2rem, 3.5vw, 3.2rem);
   font-weight: 400;
   color: var(--white);
@@ -845,7 +853,7 @@ body::before {
 }
 
 .why-closing {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-size: 1.35rem;
   font-weight: 500;
   font-style: italic;
@@ -872,7 +880,7 @@ body::before {
 }
 
 .why-feature h4 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -906,7 +914,7 @@ body::before {
 }
 
 .source-header h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 400;
   color: var(--white);
@@ -940,7 +948,7 @@ body::before {
 }
 
 .source-card h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -966,7 +974,7 @@ body::before {
 }
 
 .process-header h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 400;
   color: var(--white);
@@ -1005,7 +1013,7 @@ body::before {
   justify-content: center;
   margin: 0 auto 1.5rem;
   background: var(--black);
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--gold);
@@ -1021,7 +1029,7 @@ body::before {
 }
 
 .process-step h4 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -1055,7 +1063,7 @@ body::before {
 }
 
 .bridge h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 400;
   color: var(--white);
@@ -1115,7 +1123,7 @@ body::before {
 }
 
 .partners h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 400;
   color: var(--white);
@@ -1153,7 +1161,7 @@ body::before {
 }
 
 .partner-type {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.25em;
@@ -1174,7 +1182,7 @@ body::before {
 }
 
 .partner-card h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.9rem;
   font-weight: 400;
   color: var(--white);
@@ -1207,7 +1215,7 @@ body::before {
 }
 
 .cta-band h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
   color: var(--white);
@@ -1255,7 +1263,7 @@ body::before {
 }
 
 .about-hero h1 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 400;
   color: var(--white);
@@ -1283,7 +1291,7 @@ body::before {
 }
 
 .about-story-side h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.2rem;
   font-weight: 400;
   color: var(--white);
@@ -1299,7 +1307,7 @@ body::before {
 }
 
 .about-story-side .positioning p {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-size: 1.25rem;
   font-weight: 300;
   font-style: italic;
@@ -1325,7 +1333,7 @@ body::before {
 }
 
 .vision-section h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 400;
   color: var(--white);
@@ -1340,7 +1348,7 @@ body::before {
 }
 
 .vision-section blockquote {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-size: 1.25rem;
   font-weight: 300;
   font-style: italic;
@@ -1389,7 +1397,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-size: 5rem;
   font-weight: 300;
   color: rgba(62, 95, 88, 0.3);
@@ -1423,7 +1431,7 @@ body::before {
 }
 
 .founder-name-plate h4 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -1432,7 +1440,7 @@ body::before {
 }
 
 .founder-name-plate span {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.85);
   display: block;
@@ -1444,7 +1452,7 @@ body::before {
 }
 
 .founder-content h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 400;
   color: var(--white);
@@ -1482,7 +1490,7 @@ body::before {
 }
 
 .services-hero h1 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 400;
   color: var(--white);
@@ -1537,7 +1545,7 @@ body::before {
 }
 
 .service-num {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1;
@@ -1557,7 +1565,7 @@ body::before {
 }
 
 .service-meta h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 400;
   color: var(--white);
@@ -1600,7 +1608,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-size: 6rem;
   font-weight: 300;
   color: rgba(62, 95, 88, 0.15);
@@ -1634,7 +1642,7 @@ body::before {
 }
 
 .products-hero h1 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 400;
   color: var(--white);
@@ -1660,7 +1668,7 @@ body::before {
 }
 
 .products-intro h2 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 400;
   color: var(--white);
@@ -1692,7 +1700,7 @@ body::before {
 }
 
 .product-cat-num {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 1;
@@ -1710,7 +1718,7 @@ body::before {
 }
 
 .product-cat-title h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1778,7 +1786,7 @@ body::before {
 }
 
 .product-tag {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1812,7 +1820,7 @@ body::before {
 }
 
 .products-note h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 400;
   color: var(--white);
@@ -1845,7 +1853,7 @@ body::before {
 }
 
 .contact-info h1 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Azonix', sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
   color: var(--white);
@@ -1929,7 +1937,7 @@ body::before {
 }
 
 .detail-text h5 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -1951,7 +1959,7 @@ body::before {
 }
 
 .contact-form-wrap h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -1987,7 +1995,7 @@ body::before {
 
 .form-group label {
   display: block;
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -2004,7 +2012,7 @@ body::before {
   border: 1px solid var(--border-light);
   padding: 14px 16px;
   color: var(--white);
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   outline: none;
@@ -2090,7 +2098,7 @@ body::before {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: rgba(34, 45, 41, 0.85);
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.95rem;
 }
 
@@ -2100,7 +2108,7 @@ body::before {
 
 .form-submit {
   width: 100%;
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -2125,7 +2133,7 @@ body::before {
 }
 
 .form-success h4 {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-size: 2rem;
   font-weight: 300;
   color: var(--gold);
@@ -2181,7 +2189,7 @@ footer {
 }
 
 .footer-col h5 {
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -2229,7 +2237,7 @@ footer {
 .footer-reg {
   color: rgba(34, 45, 41, 0.5);
   font-size: 0.72rem;
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: 0.1em;
 }
 
@@ -2241,7 +2249,7 @@ footer {
 .footer-legal a {
   color: rgba(34, 45, 41, 0.5);
   font-size: 0.72rem;
-  font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-decoration: none;
   transition: color 0.3s;
 }

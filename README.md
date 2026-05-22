@@ -35,9 +35,10 @@ The project has been refactored and organized to follow clean, modern web develo
 ## 🎨 Theme & Typography
 
 - **Colors:** Transitioned to a customized **Bright Theme** utilizing a clean, light Sage/Teal palette with a high-contrast dark green (`#121A17`) header and mobile menu to retain professional brand weight.
-- **Typography:** Uses standard legible typography:
-  - **Body text:** `'Helvetica Neue'`, Helvetica, Arial, sans-serif
-  - **Headings & Display:** `'Instrument Serif'`, Georgia, serif (elegant, editorial serifs for high-end feeling)
+- **Typography:** Aligned with the official brand identity design guidelines:
+  - **Brand Identity / Headlines / Display:** `Azonix`, sans-serif (high-impact, geometric, modern branding font)
+  - **Body Text:** `'Instrument Serif'`, Georgia, serif (elegant, editorial serifs for high-end feeling)
+  - **Subtitles & UI Elements:** `'Helvetica Neue'`, Helvetica, Arial, sans-serif (clean, complimentary secondary text)
 
 ---
 
