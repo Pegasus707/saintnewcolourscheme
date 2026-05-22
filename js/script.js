@@ -23,14 +23,12 @@ function showPage(page, e) {
 
   // Calculate accordion heights dynamically once Products page becomes visible
   if (page === 'products') {
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       document.querySelectorAll('.product-category.open').forEach(c => {
         const body = c.querySelector('.product-cat-body');
-        if (body) {
-          body.style.maxHeight = body.scrollHeight + 'px';
-        }
+        if (body) body.style.maxHeight = body.scrollHeight + 'px';
       });
-    }, 50);
+    });
   }
 
   // Update nav links active state
@@ -68,23 +66,30 @@ function toggleCategory(el) {
   const isOpen = el.classList.contains('open');
   const body = el.querySelector('.product-cat-body');
 
-  // Close all categories
+  // Phase 1: Measure (Read) - DO NOT write to DOM yet to prevent layout thrashing
+  let targetHeight = '0px';
+  if (!isOpen && body) {
+    targetHeight = body.scrollHeight + 'px';
+  }
+
+  // Phase 2: Mutate (Write) - Apply all DOM changes together
   document.querySelectorAll('.product-category').forEach(c => {
-    c.classList.remove('open');
-    c.setAttribute('aria-expanded', 'false');
-    const cBody = c.querySelector('.product-cat-body');
-    if (cBody) {
-      cBody.style.maxHeight = '0px';
+    if (c !== el && c.classList.contains('open')) {
+      c.classList.remove('open');
+      c.setAttribute('aria-expanded', 'false');
+      const cBody = c.querySelector('.product-cat-body');
+      if (cBody) cBody.style.maxHeight = '0px';
     }
   });
 
-  // If it was not open, open this one
   if (!isOpen) {
     el.classList.add('open');
     el.setAttribute('aria-expanded', 'true');
-    if (body) {
-      body.style.maxHeight = body.scrollHeight + 'px';
-    }
+    if (body) body.style.maxHeight = targetHeight;
+  } else {
+    el.classList.remove('open');
+    el.setAttribute('aria-expanded', 'false');
+    if (body) body.style.maxHeight = '0px';
   }
 }
 
@@ -343,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initialize the open category's height and accessibility attributes on page load
+  // Initialize the open category's accessibility attributes on page load
   document.querySelectorAll('.product-category').forEach(c => {
     const isOpen = c.classList.contains('open');
     c.setAttribute('role', 'button');
@@ -363,23 +368,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const productsPage = document.getElementById('page-products');
       if (productsPage && productsPage.classList.contains('active')) {
         const activeBody = c.querySelector('.product-cat-body');
-        if (activeBody) {
-          activeBody.style.maxHeight = activeBody.scrollHeight + 'px';
-        }
+        if (activeBody) activeBody.style.maxHeight = activeBody.scrollHeight + 'px';
       }
     }
   });
 
-  // Debounced window resize event listener to prevent layout thrashing
+  // Debounced window resize event listener to fix accordion heights when resizing
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-      const openBody = document.querySelector('.product-category.open .product-cat-body');
-      if (openBody) {
-        openBody.style.maxHeight = openBody.scrollHeight + 'px';
-      }
-    }, 100);
+      document.querySelectorAll('.product-category.open .product-cat-body').forEach(body => {
+        body.style.maxHeight = 'none'; // reset to calculate naturally
+        const newHeight = body.scrollHeight;
+        body.style.maxHeight = newHeight + 'px';
+      });
+    }, 150);
   });
 
   // Elements to reveal
