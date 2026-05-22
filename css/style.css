@@ -2281,26 +2281,54 @@ footer {
 }
 
 .atmospheric-gradient>.hero-badge {
-  border: 1px solid rgba(105, 143, 135, 0.3) !important;
-  background: rgba(37, 56, 53, 0.85) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  box-shadow: 0 8px 32px rgba(37, 56, 53, 0.15) !important;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 1.5px solid rgba(62, 95, 88, 0.45) !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.atmospheric-gradient>.hero-badge::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: -8px !important;
+  border: 1px dashed rgba(62, 95, 88, 0.3) !important;
+  border-radius: 50% !important;
+  animation: rotateBadgeOuter 25s linear infinite !important;
+  pointer-events: none !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .atmospheric-gradient>.hero-badge:hover {
   transform: scale(1.05) !important;
-  border-color: #DCE7E5 !important;
-  box-shadow: 0 12px 40px rgba(37, 56, 53, 0.3) !important;
+  border-color: rgba(62, 95, 88, 0.8) !important;
+}
+
+.atmospheric-gradient>.hero-badge:hover::before {
+  inset: -4px !important;
+  border-color: rgba(62, 95, 88, 0.6) !important;
 }
 
 .atmospheric-gradient>.hero-badge .hero-badge-num {
-  color: #FFFFFF !important;
+  color: #3E5F58 !important; /* Dark Teal */
+  font-weight: 700 !important;
+  text-shadow: none !important;
 }
 
 .atmospheric-gradient>.hero-badge .hero-badge-text {
-  color: #DCE7E5 !important;
+  color: rgba(34, 45, 41, 0.8) !important; /* Charcoal dark green-grey */
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+@keyframes rotateBadgeOuter {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
