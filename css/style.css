@@ -1697,7 +1697,7 @@ body::before {
 }
 
 .product-cat-header:hover {
-  background: rgba(255,255,255,0.03);
+  background: rgba(34, 45, 41, 0.04);
 }
 
 .product-cat-num {
@@ -1726,11 +1726,12 @@ body::before {
   text-transform: uppercase;
   color: var(--white);
   margin-bottom: 0.4rem;
-  transition: color 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease;
 }
 
 .product-category:hover .product-cat-title h3 {
   color: var(--gold);
+  transform: translateX(4px);
 }
 
 .product-cat-title p {
@@ -1742,42 +1743,54 @@ body::before {
   display: inline-block;
   color: var(--gold);
   font-size: 1.2rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
   will-change: transform;
 }
 
 .product-category.open .product-cat-arrow {
   transform: rotate(90deg);
+  color: var(--gold-light);
 }
 
 .product-cat-body {
   overflow: hidden;
   max-height: 0;
-  /* ease-in: starts fast when closing */
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 1, 1);
   border-top: 1px solid transparent;
+  /* No transition here — max-height is a binary toggle only */
 }
 
 .product-category.open .product-cat-body {
-  max-height: 500px;
-  /* ease-out: snaps open immediately, decelerates at end */
-  transition: max-height 0.4s cubic-bezier(0, 0, 0.2, 1);
-  border-top-color: rgba(255,255,255,0.08);
+  max-height: 600px;
+  border-top-color: var(--border-light);
+  background-color: var(--white);
 }
 
+/* GPU-composited animation on the inner wrapper only */
 .product-tags-wrapper {
-  /* wrapper keeps content at natural height inside the clipped body */
+  transform: translateY(-8px);
+  opacity: 0;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.product-category.open .product-tags-wrapper {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .product-category {
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border-light);
   margin-bottom: 2px;
-  border-radius: 4px;
+  overflow: hidden;
   contain: layout style;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .product-category.open {
-  border-color: rgba(105,143,135,0.45);
+  border-color: var(--gold);
+  box-shadow: 0 10px 25px rgba(34, 45, 41, 0.05);
 }
 
 .product-tags {

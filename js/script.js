@@ -67,6 +67,9 @@ function toggleMobile() {
   }
 }
 
+// Track close timers so rapid clicks don't stack
+const _closeTimers = new WeakMap();
+
 /**
  * Product Categories Accordion
  */
@@ -76,18 +79,27 @@ function toggleCategory(el) {
   // Close all other open categories
   document.querySelectorAll('.product-category').forEach(c => {
     if (c !== el && c.classList.contains('open')) {
-      c.classList.remove('open');
-      c.setAttribute('aria-expanded', 'false');
+      // Let opacity fade out (250ms) before collapsing height
+      const t = setTimeout(() => {
+        c.classList.remove('open');
+        c.setAttribute('aria-expanded', 'false');
+      }, 250);
+      _closeTimers.set(c, t);
     }
   });
 
-  // Toggle current category
   if (!isOpen) {
+    // Cancel any pending close timer for this element (user re-opened quickly)
+    clearTimeout(_closeTimers.get(el));
+    _closeTimers.delete(el);
     el.classList.add('open');
     el.setAttribute('aria-expanded', 'true');
   } else {
-    el.classList.remove('open');
-    el.setAttribute('aria-expanded', 'false');
+    const t = setTimeout(() => {
+      el.classList.remove('open');
+      el.setAttribute('aria-expanded', 'false');
+    }, 250);
+    _closeTimers.set(el, t);
   }
 }
 
