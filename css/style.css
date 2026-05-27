@@ -31,10 +31,14 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 15px;
   overflow-x: hidden;
   /* Prevent text size adjustment on orientation change in mobile browsers */
   -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 1800px) {
+  html { font-size: 16px; }
 }
 
 body {
