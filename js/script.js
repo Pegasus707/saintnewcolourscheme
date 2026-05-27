@@ -67,9 +67,6 @@ function toggleMobile() {
   }
 }
 
-// Track close timers so rapid clicks don't stack
-const _closeTimers = new WeakMap();
-
 /**
  * Product Categories Accordion
  */
@@ -79,27 +76,17 @@ function toggleCategory(el) {
   // Close all other open categories
   document.querySelectorAll('.product-category').forEach(c => {
     if (c !== el && c.classList.contains('open')) {
-      // Let opacity fade out (250ms) before collapsing height
-      const t = setTimeout(() => {
-        c.classList.remove('open');
-        c.setAttribute('aria-expanded', 'false');
-      }, 250);
-      _closeTimers.set(c, t);
+      c.classList.remove('open');
+      c.setAttribute('aria-expanded', 'false');
     }
   });
 
   if (!isOpen) {
-    // Cancel any pending close timer for this element (user re-opened quickly)
-    clearTimeout(_closeTimers.get(el));
-    _closeTimers.delete(el);
     el.classList.add('open');
     el.setAttribute('aria-expanded', 'true');
   } else {
-    const t = setTimeout(() => {
-      el.classList.remove('open');
-      el.setAttribute('aria-expanded', 'false');
-    }, 250);
-    _closeTimers.set(el, t);
+    el.classList.remove('open');
+    el.setAttribute('aria-expanded', 'false');
   }
 }
 
@@ -373,37 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // If active on load, set its height
-    if (isOpen) {
-      const productsPage = document.getElementById('page-products');
-      if (productsPage && productsPage.classList.contains('active')) {
-        const activeBody = c.querySelector('.product-cat-body');
-        if (activeBody) activeBody.style.maxHeight = activeBody.scrollHeight + 'px';
-      }
-    }
   });
 
-  // Debounced window resize event listener to fix accordion heights when resizing
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      const bodies = Array.from(document.querySelectorAll('.product-category.open .product-cat-body'));
-      
-      // Phase 1: Reset all to 'none' (Batch Writes)
-      bodies.forEach(body => {
-        body.style.maxHeight = 'none';
-      });
-      
-      // Phase 2: Measure all scrollHeights (Batch Reads)
-      const heights = bodies.map(body => body.scrollHeight);
-      
-      // Phase 3: Set all heights (Batch Writes)
-      bodies.forEach((body, idx) => {
-        body.style.maxHeight = heights[idx] + 'px';
-      });
-    }, 150);
-  }, { passive: true });
 
   // Elements to reveal
   const revealSelectors = [
