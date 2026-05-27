@@ -1,7 +1,7 @@
 /**
  * Navigation and Page Management
  */
-function showPage(page, e) {
+function showPage(page, e, enquiryType) {
   if (e) e.preventDefault();
 
   // Reset contact form visibility state if previously submitted successfully
@@ -11,6 +11,22 @@ function showPage(page, e) {
     if (form && success && form.style.display === 'none') {
       form.style.display = 'block';
       success.style.display = 'none';
+    }
+    const select = document.getElementById('f-type');
+    if (select) {
+      if (enquiryType) {
+        select.value = enquiryType;
+        if (typeof validateField === 'function') {
+          validateField('f-type');
+        }
+      } else {
+        select.value = '';
+        select.classList.remove('success', 'error');
+        const errorEl = select.parentNode.querySelector('.error-message');
+        if (errorEl) {
+          errorEl.style.display = 'none';
+        }
+      }
     }
   }
 

@@ -16,18 +16,11 @@ The project has been refactored and organized to follow clean, modern web develo
 │   │   └── Azonix.otf      # Archive custom display font
 │   └── images/
 │       ├── *.jpg / *.png   # High-resolution image assets
-│       ├── *.webp          # Next-gen optimized WebP images (loaded via <picture> tags)
-│       └── originals/      # Original raw design source assets
+│       └── *.webp          # Next-gen optimized WebP images (loaded via <picture> tags)
 ├── css/
 │   └── style.css           # Central design system, custom properties, and styling overrides
-├── js/
-│   └── script.js           # Interactive route-handling, scroll animations, and accordion logic
-└── scripts/                # Development utility & theme migration tools
-    ├── fix_bright_theme.py
-    ├── fix_visibility.py
-    ├── make_bright.py
-    ├── replace_colors.py
-    └── update_fonts.py
+└── js/
+    └── script.js           # Interactive route-handling, scroll animations, and accordion logic
 ```
 
 ---

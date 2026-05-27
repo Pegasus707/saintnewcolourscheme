@@ -75,7 +75,7 @@
       font-size: clamp(6rem, 15vw, 10rem);
       font-style: italic;
       line-height: 0.9;
-      color: var(--gold);
+      color: #698F87;
       margin-bottom: 1.5rem;
     }
 
@@ -85,7 +85,7 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--white);
+      color: #FAFCFB;
       margin-bottom: 1rem;
     }
 
@@ -93,7 +93,7 @@
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 1rem;
       line-height: 1.6;
-      color: var(--gray);
+      color: #A6BCB7;
       margin-bottom: 2.5rem;
     }
 
@@ -102,7 +102,7 @@
       align-items: center;
       justify-content: center;
       background: var(--gold);
-      color: var(--black) !important;
+      color: #FFFFFF !important;
       border: 1px solid var(--gold);
       padding: 16px 36px;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -137,9 +137,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       z-index: 10;
-      background: var(--black);
+      background: transparent;
     }
 
     .error-logo {
@@ -159,6 +159,7 @@
       height: 100%;
       width: auto;
       display: block;
+      filter: brightness(0) invert(1);
     }
 
     .error-logo-mark picture,
@@ -176,6 +177,7 @@
       height: 100%;
       width: auto;
       display: block;
+      filter: brightness(0) invert(1);
     }
   </style>
 </head>
