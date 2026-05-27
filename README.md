@@ -1,51 +1,110 @@
 # Saint Sword Sourcing Platform
 
-A premium, highly responsive, and high-performance static sourcing platform built for **Saint Sword Pvt. Ltd.** It specializes in global industrial sourcing, strategic trade execution, and market entry/access representation in the Indian economy.
+A premium and responsive sourcing platform built for Saint Sword Pvt. Ltd. focused on industrial sourcing, global trade execution, and market representation.
 
 ---
 
-## 📂 Project Structure
+# Design System
 
-The project has been refactored and organized to follow clean, modern web development standards.
+## Color Theme
+- Light Sage / Teal premium background palette
+- Dark Green Header: #121A17
+- Soft gold accent dividers and highlights
 
-```
-├── 404.html                # Custom error redirection page
-├── index.html              # Core landing page (Hero, Services, Accordions, Contact)
+## Typography
+
+### Headlines
+- Azonix
+- Used for hero sections, banners, and major headings
+
+### Body Text
+- Instrument Serif
+- Used for descriptions and editorial-style content
+
+### UI & Controls
+- Helvetica Neue / Helvetica
+- Used for buttons, navigation, forms, and interface elements
+
+---
+
+# Animations & Transitions
+
+## Page Transitions
+- Smooth spring-style transitions
+- Custom cubic-bezier animation:
+cubic-bezier(0.16, 1, 0.3, 1)
+
+## Accordion Animations
+- CSS Grid based expand/collapse animation
+- Smooth 120fps interaction without layout lag
+
+## Hover Effects
+
+### Cards
+- Slight upward movement
+- Soft shadow depth effect
+- Subtle icon rotation
+
+### Buttons
+- Shimmer sweep animation on hover
+
+### Footer Links
+- Animated underline sweep effect
+
+### Section Dividers
+- Gold divider expansion on hover
+
+---
+
+# Performance Optimizations
+
+## Image Optimization
+- WebP images with JPG/PNG fallback support
+
+## Animation Optimization
+- GPU accelerated animations using:
+will-change
+
+## Responsive Scaling
+- Optimized typography and spacing for:
+  - Desktop
+  - Tablet
+  - Mobile devices
+
+---
+
+# Form System
+
+## Validation Features
+- Email syntax validation
+- Character/input checks
+- Secure Formspree integration
+
+---
+
+# Project Structure
+
+├── index.html
+├── 404.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
 ├── assets/
 │   ├── fonts/
-│   │   └── Azonix.otf      # Archive custom display font
 │   └── images/
-│       ├── *.jpg / *.png   # High-resolution image assets
-│       └── *.webp          # Next-gen optimized WebP images (loaded via <picture> tags)
-├── css/
-│   └── style.css           # Central design system, custom properties, and styling overrides
-└── js/
-    └── script.js           # Interactive route-handling, scroll animations, and accordion logic
-```
 
 ---
 
-## 🎨 Theme & Typography
-
-- **Colors:** Transitioned to a customized **Bright Theme** utilizing a clean, light Sage/Teal palette with a high-contrast dark green (`#121A17`) header and mobile menu to retain professional brand weight.
-- **Typography:** Aligned with the official brand identity design guidelines:
-  - **Brand Identity / Headlines / Display:** `Azonix`, sans-serif (high-impact, geometric, modern branding font)
-  - **Body Text:** `'Instrument Serif'`, Georgia, serif (elegant, editorial serifs for high-end feeling)
-  - **Subtitles & UI Elements:** `'Helvetica Neue'`, Helvetica, Arial, sans-serif (clean, complimentary secondary text)
-
----
-
-## 🚀 Performance Optimizations
-
-1. **Next-Gen WebP Images:** The platform serves optimized `.webp` assets with `<picture>` tags, falling back to standard `.jpg`/`.png` for older browsers, reducing image sizes by **~50%** and drastically improving page loading speed.
-2. **Smooth Layout Reflows:** Category accordion animations utilize high-performance `max-height` transitions instead of layout-thrashing grid transformations.
-3. **GPU Hardware Acceleration:** Complex animations and visual transitions utilize `will-change` properties to avoid rendering delays on mobile.
-4. **Form Integration:** Dynamic client-side verification on the contact form (via Formspree API) ensures validated, secure communication.
+# Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- Formspree API
+- WebP Optimization
 
 ---
 
-## 💻 Local Execution
+# Purpose
 
-Since this is a performant static site, it can be run directly:
-- **Directly:** Open `index.html` in any web browser.
-- **Local Dev Server:** Run `npx serve` or `python3 -m http.server 8000` in the root folder.
+The platform is designed to give Saint Sword Pvt. Ltd. a premium digital identity that reflects professionalism, trust, and modern global business standards.
