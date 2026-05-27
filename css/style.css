@@ -98,7 +98,7 @@ button,
   display: block;
   opacity: 1;
   content-visibility: visible;
-  animation: pageFadeIn 0.6s ease-in-out forwards;
+  animation: pageFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ─── NAV ─── */
@@ -641,10 +641,11 @@ body::before {
 @keyframes pageFadeIn {
   from {
     opacity: 0;
+    transform: translateY(10px);
   }
-
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -3450,3 +3451,202 @@ footer {
   box-shadow: 0 4px 12px rgba(105, 143, 135, 0.12);
 }
 
+/* ══════════════════════════════════════════
+   MICRO-INTERACTIONS — GLOBAL POLISH
+══════════════════════════════════════════ */
+
+/* ─── Partner cards: lift + edge glow ─── */
+.partner-card {
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(62, 95, 88, 0.18);
+  border-color: rgba(105, 143, 135, 0.5) !important;
+}
+
+/* ─── Source cards: lift + icon pop ─── */
+.source-card {
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+}
+.source-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(62, 95, 88, 0.12);
+}
+.source-card .source-icon {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.source-card:hover .source-icon {
+  transform: scale(1.2) rotate(-6deg);
+}
+
+/* ─── Process steps: bubble scale + color fill ─── */
+.step-num {
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, box-shadow 0.35s ease !important;
+  will-change: transform;
+}
+.process-step:hover .step-num {
+  transform: scale(1.12);
+  box-shadow: 0 8px 24px rgba(62, 95, 88, 0.3);
+}
+.process-step h4 {
+  transition: color 0.3s ease;
+}
+.process-step:hover h4 {
+  color: var(--gold-light);
+}
+
+/* ─── Pillar cards: deeper box-shadow on hover ─── */
+.pillar-card {
+  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+}
+.pillar-card:hover {
+  box-shadow: 0 20px 48px rgba(34, 45, 41, 0.25);
+}
+.pillar-icon {
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+  will-change: transform;
+}
+.pillar-card:hover .pillar-icon {
+  transform: scale(1.1);
+  border-color: var(--gold);
+  background: rgba(62, 95, 88, 0.12);
+}
+
+/* ─── Form inputs: focus glow ring + box-shadow ─── */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease !important;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(62, 95, 88, 0.2);
+  background: rgba(34, 45, 41, 0.07) !important;
+}
+
+/* ─── Form labels: float up on focus ─── */
+.form-group label {
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+.form-group:focus-within label {
+  color: var(--gold-light);
+  letter-spacing: 0.18em;
+}
+
+/* ─── Form submit: shimmer sweep on hover ─── */
+.form-submit {
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+}
+.form-submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0s;
+}
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(62, 95, 88, 0.35);
+}
+.form-submit:hover::after {
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+.form-submit:active {
+  transform: scale(0.98) translateY(0);
+}
+
+/* ─── Footer links: underline sweep ─── */
+footer a {
+  position: relative;
+  display: inline-block;
+}
+footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-light);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+footer a:hover::after {
+  width: 100%;
+}
+
+/* ─── Stat cards: subtle lift ─── */
+.stat {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.stat:hover {
+  transform: translateY(-3px);
+}
+
+/* ─── Why-feature rows: left arrow nudge on hover ─── */
+.why-feature {
+  transition: padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.why-feature:hover {
+  padding-left: 0.5rem;
+}
+.why-feature::before {
+  transition: color 0.25s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.why-feature:hover::before {
+  color: var(--gold-light);
+  transform: translateX(4px);
+}
+
+/* ─── Gold divider line: expand on section hover ─── */
+.gold-line {
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+section:hover .gold-line {
+  width: 90px;
+}
+
+/* ─── Nav logo: smooth opacity pop ─── */
+.nav-logo {
+  transition: opacity 0.2s ease;
+}
+.nav-logo:hover {
+  opacity: 0.85;
+}
+
+/* ─── Contact detail rows: full row slide on hover ─── */
+.contact-detail {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.contact-detail:hover {
+  transform: translateX(4px);
+}
+
+/* ─── Btn-primary: arrow nudge ─── */
+.btn-primary .btn-arrow,
+.btn-primary span:last-child {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.btn-primary:hover .btn-arrow,
+.btn-primary:hover span:last-child {
+  transform: translateX(4px);
+}
+
+/* ─── Mobile tap: remove flash, keep tactile ─── */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+button, a, [onclick] {
+  cursor: pointer;
+}
