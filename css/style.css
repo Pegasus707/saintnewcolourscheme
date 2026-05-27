@@ -1692,11 +1692,12 @@ body::before {
   gap: 2rem;
   padding: 2.5rem;
   cursor: pointer;
-  transition: background 0.3s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .product-cat-header:hover {
-  background: rgba(34, 45, 41, 0.02);
+  background: rgba(255,255,255,0.03);
 }
 
 .product-cat-num {
@@ -1725,12 +1726,11 @@ body::before {
   text-transform: uppercase;
   color: var(--white);
   margin-bottom: 0.4rem;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .product-category:hover .product-cat-title h3 {
   color: var(--gold);
-  transform: translateX(4px);
 }
 
 .product-cat-title p {
@@ -1742,46 +1742,42 @@ body::before {
   display: inline-block;
   color: var(--gold);
   font-size: 1.2rem;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+  transition: transform 0.3s ease;
   will-change: transform;
 }
 
 .product-category.open .product-cat-arrow {
   transform: rotate(90deg);
-  color: var(--gold-light);
 }
 
 .product-cat-body {
-  display: grid;
-  grid-template-rows: 0fr;
   overflow: hidden;
-  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease;
+  max-height: 0;
+  /* ease-in: starts fast when closing */
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 1, 1);
   border-top: 1px solid transparent;
-  will-change: grid-template-rows;
 }
 
 .product-category.open .product-cat-body {
-  grid-template-rows: 1fr;
-  border-top-color: var(--border-light);
-  background-color: var(--white);
+  max-height: 500px;
+  /* ease-out: snaps open immediately, decelerates at end */
+  transition: max-height 0.4s cubic-bezier(0, 0, 0.2, 1);
+  border-top-color: rgba(255,255,255,0.08);
 }
 
 .product-tags-wrapper {
-  min-height: 0;
+  /* wrapper keeps content at natural height inside the clipped body */
 }
 
 .product-category {
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(255,255,255,0.08);
   margin-bottom: 2px;
-  overflow: hidden;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 4px;
+  contain: layout style;
 }
 
 .product-category.open {
-  border-color: var(--gold);
-  /* Highlight open card border */
-  box-shadow: 0 10px 25px rgba(34, 45, 41, 0.05);
-  /* Professional elevation */
+  border-color: rgba(105,143,135,0.45);
 }
 
 .product-tags {
