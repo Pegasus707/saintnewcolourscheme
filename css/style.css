@@ -1752,17 +1752,22 @@ body::before {
 }
 
 .product-cat-body {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease;
   border-top: 1px solid transparent;
-  will-change: max-height;
+  will-change: grid-template-rows;
 }
 
 .product-category.open .product-cat-body {
+  grid-template-rows: 1fr;
   border-top-color: var(--border-light);
   background-color: var(--white);
-  /* #222D29 - Dark green-black from the palette */
+}
+
+.product-tags-wrapper {
+  min-height: 0;
 }
 
 .product-category {

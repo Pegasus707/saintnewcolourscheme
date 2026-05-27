@@ -37,26 +37,8 @@ function showPage(page, e, enquiryType) {
     targetPage.classList.add('active');
   }
 
-  // Calculate accordion heights dynamically once Products page becomes visible
-  if (page === 'products') {
-    requestAnimationFrame(() => {
-      const openCategories = Array.from(document.querySelectorAll('.product-category.open'));
-      openCategories.forEach(c => {
-        const body = c.querySelector('.product-cat-body');
-        if (body) {
-          const scrollHeight = body.scrollHeight;
-          body.style.maxHeight = scrollHeight + 'px';
-          // Clean up max-height once animation is done to maintain responsiveness on window resize
-          setTimeout(() => {
-            if (c.classList.contains('open')) {
-              body.style.maxHeight = 'none';
-            }
-          }, 400);
-        }
-      });
-    });
-  }
-
+  // No accordion heights calculation needed anymore as CSS Grid handles it natively
+  
   // Update nav links active state
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   const navEl = document.getElementById('nav-' + page);
@@ -90,61 +72,22 @@ function toggleMobile() {
  */
 function toggleCategory(el) {
   const isOpen = el.classList.contains('open');
-  const body = el.querySelector('.product-cat-body');
-  if (!body) return;
 
-  // Phase 1: Close other open categories smoothly
+  // Close all other open categories
   document.querySelectorAll('.product-category').forEach(c => {
     if (c !== el && c.classList.contains('open')) {
       c.classList.remove('open');
       c.setAttribute('aria-expanded', 'false');
-      const cBody = c.querySelector('.product-cat-body');
-      if (cBody) {
-        // Set to pixel height first before collapsing
-        cBody.style.maxHeight = cBody.scrollHeight + 'px';
-        cBody.offsetHeight; // Force reflow
-        requestAnimationFrame(() => {
-          cBody.style.maxHeight = '0px';
-        });
-      }
     }
   });
 
-  // Phase 2: Toggle the clicked category
+  // Toggle current category
   if (!isOpen) {
     el.classList.add('open');
     el.setAttribute('aria-expanded', 'true');
-    
-    // Animate from 0 to scrollHeight
-    const targetHeight = body.scrollHeight;
-    body.style.maxHeight = '0px';
-    body.offsetHeight; // Force reflow
-    
-    requestAnimationFrame(() => {
-      body.style.maxHeight = targetHeight + 'px';
-    });
-
-    // Remove max-height constraint on transition end to allow responsive wrapping
-    const onTransitionEnd = (e) => {
-      if (e.propertyName === 'max-height' && el.classList.contains('open')) {
-        body.style.maxHeight = 'none';
-        body.removeEventListener('transitionend', onTransitionEnd);
-      }
-    };
-    body.addEventListener('transitionend', onTransitionEnd);
   } else {
-    // If it is open (and has maxHeight: none), transition back to 0
-    if (body.style.maxHeight === 'none' || !body.style.maxHeight) {
-      body.style.maxHeight = body.scrollHeight + 'px';
-      body.offsetHeight; // Force reflow
-    }
-    
     el.classList.remove('open');
     el.setAttribute('aria-expanded', 'false');
-    
-    requestAnimationFrame(() => {
-      body.style.maxHeight = '0px';
-    });
   }
 }
 
