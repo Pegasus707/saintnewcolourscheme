@@ -41,22 +41,17 @@ function showPage(page, e, enquiryType) {
   if (page === 'products') {
     requestAnimationFrame(() => {
       const openCategories = Array.from(document.querySelectorAll('.product-category.open'));
-      const measureBodies = [];
-      
-      // Batch Measure (Read scroll heights)
-      const heights = openCategories.map(c => {
+      openCategories.forEach(c => {
         const body = c.querySelector('.product-cat-body');
         if (body) {
-          measureBodies.push(body);
-          return body.scrollHeight;
-        }
-        return null;
-      });
-      
-      // Batch Mutate (Write styles)
-      measureBodies.forEach((body, idx) => {
-        if (body && heights[idx] !== null) {
-          body.style.maxHeight = heights[idx] + 'px';
+          const scrollHeight = body.scrollHeight;
+          body.style.maxHeight = scrollHeight + 'px';
+          // Clean up max-height once animation is done to maintain responsiveness on window resize
+          setTimeout(() => {
+            if (c.classList.contains('open')) {
+              body.style.maxHeight = 'none';
+            }
+          }, 400);
         }
       });
     });
@@ -96,31 +91,60 @@ function toggleMobile() {
 function toggleCategory(el) {
   const isOpen = el.classList.contains('open');
   const body = el.querySelector('.product-cat-body');
+  if (!body) return;
 
-  // Phase 1: Measure (Read) - DO NOT write to DOM yet to prevent layout thrashing
-  let targetHeight = '0px';
-  if (!isOpen && body) {
-    targetHeight = body.scrollHeight + 'px';
-  }
-
-  // Phase 2: Mutate (Write) - Apply all DOM changes together
+  // Phase 1: Close other open categories smoothly
   document.querySelectorAll('.product-category').forEach(c => {
     if (c !== el && c.classList.contains('open')) {
       c.classList.remove('open');
       c.setAttribute('aria-expanded', 'false');
       const cBody = c.querySelector('.product-cat-body');
-      if (cBody) cBody.style.maxHeight = '0px';
+      if (cBody) {
+        // Set to pixel height first before collapsing
+        cBody.style.maxHeight = cBody.scrollHeight + 'px';
+        cBody.offsetHeight; // Force reflow
+        requestAnimationFrame(() => {
+          cBody.style.maxHeight = '0px';
+        });
+      }
     }
   });
 
+  // Phase 2: Toggle the clicked category
   if (!isOpen) {
     el.classList.add('open');
     el.setAttribute('aria-expanded', 'true');
-    if (body) body.style.maxHeight = targetHeight;
+    
+    // Animate from 0 to scrollHeight
+    const targetHeight = body.scrollHeight;
+    body.style.maxHeight = '0px';
+    body.offsetHeight; // Force reflow
+    
+    requestAnimationFrame(() => {
+      body.style.maxHeight = targetHeight + 'px';
+    });
+
+    // Remove max-height constraint on transition end to allow responsive wrapping
+    const onTransitionEnd = (e) => {
+      if (e.propertyName === 'max-height' && el.classList.contains('open')) {
+        body.style.maxHeight = 'none';
+        body.removeEventListener('transitionend', onTransitionEnd);
+      }
+    };
+    body.addEventListener('transitionend', onTransitionEnd);
   } else {
+    // If it is open (and has maxHeight: none), transition back to 0
+    if (body.style.maxHeight === 'none' || !body.style.maxHeight) {
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.offsetHeight; // Force reflow
+    }
+    
     el.classList.remove('open');
     el.setAttribute('aria-expanded', 'false');
-    if (body) body.style.maxHeight = '0px';
+    
+    requestAnimationFrame(() => {
+      body.style.maxHeight = '0px';
+    });
   }
 }
 
